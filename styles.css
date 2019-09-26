@@ -1,17 +1,146 @@
-* {
-  margin:0px;
-  padding:0px;
+
+.entry1 {
+  	display: none;}
+
+
+.entry2 {
+	display: none;
 }
 
-#octocat {
-  display: block;
-  width:384px;
-  margin: 50px auto;
+.entry3 {
+  	display: none;}
+
+.entry4 {
+	display: none;
 }
 
-p {
-  display: block;
-  width: 400px;
-  margin: 50px auto;
-  font: 30px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+.entry5 {
+	display: none;
+}
+
+.entry6 {
+	display: none;
+}
+
+.entry7 {
+	display: none;
+}
+
+.entry8 {
+	display: none;
+}
+
+.dtap2 {
+	display: none;
+}
+
+.hepb2 {
+	display: none;
+}
+
+.hib2 {
+	display: none;
+}
+
+.pedvax2 {
+	display: none;
+}
+
+.pcv2 {
+	display: none;
+}
+
+.rotarix2 {
+	display: none;
+}
+
+.rotateq2 {
+	display: none;
+}
+
+.polio2 {
+	display: none;
+}
+
+.mmr2 {
+	display: none;
+}
+
+.dosedates1 {
+	display: none;
+}
+
+.dosedates2 {
+	display: none;
+}
+
+.dosedates3 {
+	display: none;
+}
+
+.dosedates4 {
+	display: none;
+}
+
+.dosedates5 {
+	display: none;
+}
+
+.dosedates6 {
+	display: none;
+}
+
+.dosedates7 {
+	display: none;
+}
+.dosedates8 {
+	display: none;
+}
+
+#container {
+	text-align: center;
+}
+
+.dtap, .dtapbutton {
+	display: inline;
+}
+
+.hepb, .hepbbutton {
+	display: inline;
+}
+
+.hib, .hibbutton {
+	display: inline;
+}
+
+.pedvax, .pedvaxbutton {
+	display: inline;
+}
+
+.pcv, .pcvbutton {
+	display: inline;
+}
+
+.rotarix, .rotarixbutton {
+	display: inline;
+}
+
+.rotateq, .rotateqbutton {
+	display: inline;
+}
+
+.polio, .poliobutton {
+	display: inline;
+}
+
+.mmr, .mmrbutton {
+	display: inline;
+}
+
+.varicella, .varicellabutton {
+	display: inline;
+}
+
+#add {
+	color: blue;
 }
