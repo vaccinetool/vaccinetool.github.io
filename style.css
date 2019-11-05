@@ -1,99 +1,13 @@
 
-.entry1 {
-  	display: none;}
+.entry1, .entry2, .entry3, .entry4, .entry5, .entry6, .entry7, .entry8 {
+  	display: none;
+  }
 
-
-.entry2 {
+.dtap2, .hepb2, .hib2, .pedvax2, .pcv2, .rotarix2, .rotateq2, .polio2, .mmr2 {
 	display: none;
 }
 
-.entry3 {
-  	display: none;}
-
-.entry4 {
-	display: none;
-}
-
-.entry5 {
-	display: none;
-}
-
-.entry6 {
-	display: none;
-}
-
-.entry7 {
-	display: none;
-}
-
-.entry8 {
-	display: none;
-}
-
-.dtap2 {
-	display: none;
-}
-
-.hepb2 {
-	display: none;
-}
-
-.hib2 {
-	display: none;
-}
-
-.pedvax2 {
-	display: none;
-}
-
-.pcv2 {
-	display: none;
-}
-
-.rotarix2 {
-	display: none;
-}
-
-.rotateq2 {
-	display: none;
-}
-
-.polio2 {
-	display: none;
-}
-
-.mmr2 {
-	display: none;
-}
-
-.dosedates1 {
-	display: none;
-}
-
-.dosedates2 {
-	display: none;
-}
-
-.dosedates3 {
-	display: none;
-}
-
-.dosedates4 {
-	display: none;
-}
-
-.dosedates5 {
-	display: none;
-}
-
-.dosedates6 {
-	display: none;
-}
-
-.dosedates7 {
-	display: none;
-}
-.dosedates8 {
+.dosedates1, .dosedates2, .dosedates3, .dosedates4, .dosedates5, .dosedates6, .dosedates7, .dosedates8 {
 	display: none;
 }
 
@@ -141,6 +55,24 @@
 	display: inline;
 }
 
-#add {
-	color: blue;
+.dtapbutton, .hibbutton, .varicellabutton, .mmrbutton, .poliobutton, .rotateqbutton, .rotarixbutton, .pcvbutton, .pedvaxbutton, .hepbbutton, .dtapbutton {
+	display: none;
+}
+
+#disclaimer {
+   position: fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:#999;
+   font-family: arial;
+}
+
+#title {
+	font-family: american typewriter;
+}
+
+.birthday {
+	font-family: arial;
 }
