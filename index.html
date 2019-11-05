@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	  <link rel='stylesheet' type='text/css' href='https://vaccinetool.github.io/style.css'>
+	  <link rel='stylesheet' type='text/css' href='style.css'>
 </head>
 <body>
 
-<p>Disclaimer: Vaccine Tool is not intended to replace physician guidance. Please consult physician for all dose scheduling.</p>
-
 <div id='container'>
-  <form class='birthday'>Birthday<input type='date' id='birthday1'></form>
+  <h1 id='title'>Vaccine Schedule Generator</h1>
+  <form class='birthday'>Birthday  <input type='date' id='birthday1'></form>
+
+  <div><br></div>
   
-  <div id = 'addName'>Add Vaccine</div>
+  <button id = 'addName'>Add Vaccine</button>
 <div><br></div>
 
 
-    
-  <!-- jQuery Example -->
+
   <div></div>
 
   <form id ='choice1' class='entry1'>Vaccine: <select><option>Varicella</option><option>DTaP</option><option>Hep B</option><option>HiB (ActHIB, Pentacel, or Hiberix)</option><option>HiB (PedvaxHIB)</option><option>MMR (measles, mumps, rubella)</option><option>Pneumococcal (PCV13)</option><option>Poliovirus</option><option>Rotavirus (Rotarix/RV1)</option><option>Rotavirus (RotaTeq)</option></select></form>
-  <form class='entry1 line1'>Date<input type='date' id='date1'></form><div class='entry1 line1' id='adddose1'>Add Dose</div>
+  <form class='entry1 line1'>Date<input type='date' id='date1'></form><button class='entry1 line1' id='adddose1'>Add Dose</button>
 
   <form class='dosedates1' id='vaccine1date1'>Date<input type='date' id='vaccine1a'></form>
   <form class='dosedates1' id='vaccine1date2'>Date<input type='date' id='vaccine1b'></form>
@@ -30,7 +30,7 @@
   <div class='entry1'><br></div>
 
   <form id ='choice2' class='entry2'>Vaccine: <select><option>Varicella</option><option>DTaP</option><option>Hep B</option><option>HiB (ActHIB, Pentacel, or Hiberix)</option><option>HiB (PedvaxHIB)</option><option>MMR (measles, mumps, rubella)</option><option>Pneumococcal (PCV13)</option><option>Poliovirus</option><option>Rotavirus (Rotarix/RV1)</option><option>Rotavirus (RotaTeq)</option></select></form>
-  <form class='entry2 line2'>Date<input type='date' id='date2'></form><div class='entry2 line2' id='adddose2'>Add Dose</div>
+  <form class='entry2 line2'>Date<input type='date' id='date2'></form><button class='entry2 line2' id='adddose2'>Add Dose</button>
 
   <form class='dosedates2' id='vaccine2date1'>Date<input type='date' id='vaccine2a'></form>
   <form class='dosedates2' id='vaccine2date2'>Date<input type='date' id='vaccine2b'></form>
@@ -41,7 +41,7 @@
   <div class='entry2'><br></div>
 
   <form id ='choice3' class='entry3'>Vaccine:<select><option>Varicella</option><option>DTaP</option><option>Hep B</option><option>HiB (ActHIB, Pentacel, or Hiberix)</option><option>HiB (PedvaxHIB)</option><option>MMR (measles, mumps, rubella)</option><option>Pneumococcal (PCV13)</option><option>Poliovirus</option><option>Rotavirus (Rotarix/RV1)</option><option>Rotavirus (RotaTeq)</option></select></form>
-  <form class='entry3 line3'>Date<input type='date' id='date3'></form><div class='entry3 line3' id='adddose3'>Add Dose</div>
+  <form class='entry3 line3'>Date<input type='date' id='date3'></form><button class='entry3 line3' id='adddose3'>Add Dose</button>
 
   <form class='dosedates3' id='vaccine3date1'>Date<input type='date' id='vaccine3a'></form>
   <form class='dosedates3' id='vaccine3date2'>Date<input type='date' id='vaccine3b'></form>
@@ -52,7 +52,7 @@
   <div class='entry3'><br></div>
 
   <form id ='choice4' class='entry4'>Vaccine:<select><option>Varicella</option><option>DTaP</option><option>Hep B</option><option>HiB (ActHIB, Pentacel, or Hiberix)</option><option>HiB (PedvaxHIB)</option><option>MMR (measles, mumps, rubella)</option><option>Pneumococcal (PCV13)</option><option>Poliovirus</option><option>Rotavirus (Rotarix/RV1)</option><option>Rotavirus (RotaTeq)</option></select></form>
-  <form class='entry4 line4'>Date<input type='date' id='date4'></form><div class='entry4 line4' id='adddose4'>Add Dose</div>
+  <form class='entry4 line4'>Date<input type='date' id='date4'></form><button class='entry4 line4' id='adddose4'>Add Dose</button>
 
   <form class='dosedates4' id='vaccine4date1'>Date<input type='date' id='vaccine4a'></form>
   <form class='dosedates4' id='vaccine4date2'>Date<input type='date' id='vaccine4b'></form>
@@ -63,7 +63,7 @@
   <div class='entry4'><br></div>
 
   <form id ='choice5' class='entry5'>Vaccine:<select><option>Varicella</option><option>DTaP</option><option>Hep B</option><option>HiB (ActHIB, Pentacel, or Hiberix)</option><option>HiB (PedvaxHIB)</option><option>MMR (measles, mumps, rubella)</option><option>Pneumococcal (PCV13)</option><option>Poliovirus</option><option>Rotavirus (Rotarix/RV1)</option><option>Rotavirus (RotaTeq)</option></select></form>
-  <form class='entry5 line5'>Date<input type='date' id='date5'></form><div class='entry5 line5' id='adddose5'>Add Dose</div>
+  <form class='entry5 line5'>Date<input type='date' id='date5'></form><button class='entry5 line5' id='adddose5'>Add Dose</button>
 
   <form class='dosedates5' id='vaccine5date1'>Date<input type='date' id='vaccine5a'></form>
   <form class='dosedates5' id='vaccine5date2'>Date<input type='date' id='vaccine5b'></form>
@@ -74,7 +74,7 @@
   <div class='entry5'><br></div>
 
   <form id ='choice6' class='entry6'>Vaccine:<select><option>Varicella</option><option>DTaP</option><option>Hep B</option><option>HiB (ActHIB, Pentacel, or Hiberix)</option><option>HiB (PedvaxHIB)</option><option>MMR (measles, mumps, rubella)</option><option>Pneumococcal (PCV13)</option><option>Poliovirus</option><option>Rotavirus (Rotarix/RV1)</option><option>Rotavirus (RotaTeq)</option></select></form>
-  <form class='entry6 line6'>Date<input type='date' id='date6'></form><div class='entry6 line6' id='adddose6'>Add Dose</div>
+  <form class='entry6 line6'>Date<input type='date' id='date6'></form><button class='entry6 line6' id='adddose6'>Add Dose</button>
 
   <form class='dosedates6' id='vaccine6date1'>Date<input type='date' id='vaccine6a'></form>
   <form class='dosedates6' id='vaccine6date2'>Date<input type='date' id='vaccine6b'></form>
@@ -85,7 +85,7 @@
   <div class='entry6'><br></div>
 
   <form id ='choice7' class='entry7'>Vaccine:<select><option>Varicella</option><option>DTaP</option><option>Hep B</option><option>HiB (ActHIB, Pentacel, or Hiberix)</option><option>HiB (PedvaxHIB)</option><option>MMR (measles, mumps, rubella)</option><option>Pneumococcal (PCV13)</option><option>Poliovirus</option><option>Rotavirus (Rotarix/RV1)</option><option>Rotavirus (RotaTeq)</option></select></form>
-  <form class='entry7 line7'>Date<input type='date' id='date7'></form><div class='entry7 line7' id='adddose7'>Add Dose</div>
+  <form class='entry7 line7'>Date<input type='date' id='date7'></form><button class='entry7 line7' id='adddose7'>Add Dose</button>
 
   <form class='dosedates7' id='vaccine7date1'>Date<input type='date' id='vaccine7a'></form>
   <form class='dosedates7' id='vaccine7date2'>Date<input type='date' id='vaccine7b'></form>
@@ -96,7 +96,7 @@
   <div class='entry7'><br></div>
 
   <form id ='choice8' class='entry8'>Vaccine:<select><option>Varicella</option><option>DTaP</option><option>Hep B</option><option>HiB (ActHIB, Pentacel, or Hiberix)</option><option>HiB (PedvaxHIB)</option><option>MMR (measles, mumps, rubella)</option><option>Pneumococcal (PCV13)</option><option>Poliovirus</option><option>Rotavirus (Rotarix/RV1)</option><option>Rotavirus (RotaTeq)</option></select></form>
-  <form class='entry8 line8'>Date<input type='date' id='date8'></form><div class='entry8 line8' id='adddose8'>Add Dose</div>
+  <form class='entry8 line8'>Date<input type='date' id='date8'></form><button class='entry8 line8' id='adddose8'>Add Dose</button>
 
   <form class='dosedates8' id='vaccine8date1'>Date<input type='date' id='vaccine8a'></form>
   <form class='dosedates8' id='vaccine8date2'>Date<input type='date' id='vaccine8b'></form>
@@ -108,53 +108,56 @@
 
   
   <div class='dtap'></div>
-  <div class='dtapbutton'></div>
+  <input type="button" value=&#9660; class="dtapbutton" />
   <div class='dtap2'></div>
 
   <div class='hepb'></div>
-  <div class='hepbbutton'></div>
+  <input type="button" value=&#9660; class='hepbbutton' />
   <div class='hepb2'></div>
 
   <div class='hib'></div>
-  <div class='hibbutton'></div>
+  <input type="button" value=&#9660; class='hibbutton' />
   <div class='hib2'></div>
 
   <div class='pedvax'></div>
-  <div class='pedvaxbutton'></div>
+  <input type="button" value=&#9660; class='pedvaxbutton' />
   <div class='pedvax2'></div>
 
   <div class='pcv'></div>
-  <div class='pcvbutton'></div>
+  <input type="button" value=&#9660; class='pcvbutton' />
   <div class='pcv2'></div>
 
   <div class='rotarix'></div>
-  <div class='rotarixbutton'></div>
+  <input type="button" value=&#9660; class='rotarixbutton' />
   <div class='rotarix2'></div>
 
   <div class='rotateq'></div>
-  <div class='rotateqbutton'></div>
+  <input type="button" value=&#9660; class='rotateqbutton' />
   <div class='rotateq2'></div>
 
   <div class='polio'></div>
-  <div class='poliobutton'></div>
+  <input type="button" value=&#9660; class='poliobutton' />
   <div class='polio2'></div>
 
   <div class='mmr'></div>
-  <div class='mmrbutton'></div>
+  <input type="button" value=&#9660; class='mmrbutton' />
   <div class='mmr2'></div>
 
   <div class='varicella'></div>
-  <div class='varicellabutton'></div>
+  <input type="button" value=&#9660; class='varicellabutton' />
   <div class='varicella2'></div>
 
-  <div id = 'add'>Submit</div>
+  <button id = 'add'>Submit</button>
+
+  <div id='disclaimer'>Disclaimer: Vaccine Tool is not intended to replace physician guidance. Please consult physician for all dose scheduling.</div>
+
 </div>
 
   <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
-  <script src="https://vaccinetool.github.io/practice.js"></script>
+  <script src="practice.js"></script>
 
 </body>
 </html>
