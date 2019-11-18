@@ -37,6 +37,11 @@ $(document).ready(function(){
   var poliodates = [];
   var mmrdates = [];
   var varicelladates = [];
+  var hepadates = [];
+  var vaqtadates = [];
+  var mendates = [];
+  var tdapdates = [];
+  var hpvdates = [];
   var dates = ['date1', 'date2', 'date3', 'date4', 'date5', 'date6', 'date7', 'date8'];
   var missingvacs=[];
   var nextvacs=[];
@@ -202,9 +207,19 @@ $(document).ready(function(){
     birthday = new Date(birthdayvalue);
     var months7 = new Date(birthday.setMonth(birthday.getMonth()+7));
     birthday = new Date(birthdayvalue);
-    var years4 = new Date(birthday.setFullYear(birthday.getFullYear()+4));
-    birthday = new Date(birthdayvalue);
     var months19 = new Date(birthday.setDate(birthday.getDate()+19));
+    birthday = new Date(birthdayvalue);
+    var year13 = new Date(birthday.setFullYear(birthday.getFullYear()+13));
+    birthday = new Date(birthdayvalue);
+    var year17 = new Date(birthday.setFullYear(birthday.getFullYear()+17));
+    birthday = new Date(birthdayvalue);
+    var year16 = new Date(birthday.setFullYear(birthday.getFullYear()+16));
+    birthday = new Date(birthdayvalue);
+    var year19 = new Date(birthday.setFullYear(birthday.getFullYear()+19));
+    birthday = new Date(birthdayvalue);
+    var year15 = new Date(birthday.setFullYear(birthday.getFullYear()+15));
+    birthday = new Date(birthdayvalue);
+    var year9 = new Date(birthday.setFullYear(birthday.getFullYear()+9));
     birthday = new Date(birthdayvalue);
 
 
@@ -288,7 +303,7 @@ $(document).ready(function(){
           }
         }
       }
-      else if(selections[i].text()=='MMR (measles, mumps, rubella)'){
+      else if(selections[i].text()=='MMR'){
         mmrdates.push(document.getElementById(dates[i]).value);
         for(j=0; j<vaccines[0].length; j++){
           if (document.getElementById(vaccines[i][j]).value!==''){
@@ -301,6 +316,46 @@ $(document).ready(function(){
         for(j=0; j<vaccines[0].length; j++){
           if (document.getElementById(vaccines[i][j]).value!==''){
             varicelladates.push(document.getElementById(vaccines[i][j]).value);
+          }
+        }
+      }
+      else if(selections[i].text()=='Hepatitis A (Havrix)'){
+        hepadates.push(document.getElementById(dates[i]).value);
+        for(j=0; j<vaccines[0].length; j++){
+          if (document.getElementById(vaccines[i][j]).value!==''){
+            hepadates.push(document.getElementById(vaccines[i][j]).value);
+          }
+        }
+      }
+      else if(selections[i].text()=='Hepatitis A (Vaqta)'){
+        vaqtadates.push(document.getElementById(dates[i]).value);
+        for(j=0; j<vaccines[0].length; j++){
+          if (document.getElementById(vaccines[i][j]).value!==''){
+            vaqtadates.push(document.getElementById(vaccines[i][j]).value);
+          }
+        }
+      }
+      else if(selections[i].text()=='Meningococcal'){
+        mendates.push(document.getElementById(dates[i]).value);
+        for(j=0; j<vaccines[0].length; j++){
+          if (document.getElementById(vaccines[i][j]).value!==''){
+            mendates.push(document.getElementById(vaccines[i][j]).value);
+          }
+        }
+      }
+      else if(selections[i].text()=='TDaP'){
+        tdapdates.push(document.getElementById(dates[i]).value);
+        for(j=0; j<vaccines[0].length; j++){
+          if (document.getElementById(vaccines[i][j]).value!==''){
+            tdapdates.push(document.getElementById(vaccines[i][j]).value);
+          }
+        }
+      }
+      else if(selections[i].text()=='HPV'){
+        hpvdates.push(document.getElementById(dates[i]).value);
+        for(j=0; j<vaccines[0].length; j++){
+          if (document.getElementById(vaccines[i][j]).value!==''){
+            hpvdates.push(document.getElementById(vaccines[i][j]).value);
           }
         }
       }
@@ -380,7 +435,7 @@ $(document).ready(function(){
             $('.dtap').append('</br>' + firstdose + ' ');
             $('.dtapbutton').show();
             for(i=0; i<nextdose.length; i++){
-              $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+              $('.dtap2').append('<br>' + nextdose[i] + '<br>');
             }
             break;
           }
@@ -393,7 +448,7 @@ $(document).ready(function(){
             $('.dtap').append('</br>' + firstdose);
             $('.dtapbutton').show();
             for(i=0; i<nextdose.length; i++){
-              $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+              $('.dtap2').append('</br>' + nextdose[i] + '<br>');
             }
             break;
           }
@@ -417,7 +472,7 @@ $(document).ready(function(){
           $('.dtap').append('</br>' + firstdose + ' ');
           $('.dtapbutton').show();
           for(i=0; i<4; i++){
-            $('.dtap2').append('<br/>' + nextdose[i] + '<br/>');            
+            $('.dtap2').append('<br/>' + nextdose[i] + '<br>');            
           }
           break;
         }
@@ -440,12 +495,12 @@ $(document).ready(function(){
                 nextdose.push('2nd DTaP dose 4 to 8 weeks after dose 1. (Between ' + dtapentry14wks.toLocaleDateString() + ' and ' + dtapentry18wks.toLocaleDateString() + ').');
               }
               nextdose.push('3rd DTaP dose 4 to 8 weeks after dose 2.');
-              nextdose.push('4th DTAP dose 6 months after dose 3 AND after 15 months old.');
+              nextdose.push('4th DTaP dose 6 months after dose 3 AND after 15 months old.');
               nextdose.push('5th DTaP dose (final dose) between 4 and 6 years old.');
               $('.dtap').append('</br>' + firstdose + ' ');
               $('.dtapbutton').show();
               for(i=0; i<4; i++){
-                $('.dtap2').append('<br/>' + nextdose[i] + '<br/>');            
+                $('.dtap2').append('<br/>' + nextdose[i] + '<br>');            
               }
               break;
             }
@@ -463,7 +518,7 @@ $(document).ready(function(){
               $('.dtap').append('</br>' + firstdose + ' ');
               $('.dtapbutton').show();
               for(i=0; i<4; i++){
-                $('.dtap2').append('<br/>' + nextdose[i] + '<br/>');            
+                $('.dtap2').append('<br/>' + nextdose[i] + '<br>');            
               }
               break;
             }
@@ -480,7 +535,7 @@ $(document).ready(function(){
               $('.dtap').append('</br>' + firstdose + ' ');
               $('.dtapbutton').show();
               for(i=0; i<4; i++){
-                $('.dtap2').append('<br/>' + nextdose[i] + '<br/>');            
+                $('.dtap2').append('<br/>' + nextdose[i] + '<br>');            
               }
               break;
             }
@@ -517,7 +572,7 @@ $(document).ready(function(){
                 $('.dtap').append('</br>' + firstdose + ' ');
                 $('.dtapbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                  $('.dtap2').append('</br>' + nextdose[i] + '<br>');
                 }
                 break;
               }
@@ -534,7 +589,7 @@ $(document).ready(function(){
                 $('.dtap').append('</br>' + firstdose + ' ');
                 $('.dtapbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                  $('.dtap2').append('</br>' + nextdose[i] + '<br>');
                 }
                 break;
               }
@@ -557,7 +612,7 @@ $(document).ready(function(){
               $('.dtap').append('</br>' + firstdose + '</br>');
               $('.dtapbutton').show();
               for(i=0; i<3; i++){
-                $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                $('.dtap2').append('</br>' + nextdose[i] + '<br>');
               }
               break;
             }
@@ -586,7 +641,7 @@ $(document).ready(function(){
               $('.dtap').append('</br>' + firstdose + ' ');
               $('.dtapbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                $('.dtap2').append('</br>' + nextdose[i] + '<br>');
               }
               break;
             }
@@ -603,7 +658,7 @@ $(document).ready(function(){
               $('.dtap').append('</br>' + firstdose + ' ');
               $('.dtapbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                $('.dtap2').append('</br>' + nextdose[i] + '<br>');
               }
               break;
             }
@@ -619,7 +674,7 @@ $(document).ready(function(){
               $('.dtap').append('</br>' + firstdose + ' ');
               $('.dtapbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                $('.dtap2').append('</br>' + nextdose[i] + '<br>');
               }
               break;
             }
@@ -655,7 +710,7 @@ $(document).ready(function(){
                 $('.dtap').append('</br>' + firstdose + ' ');
                 $('.dtapbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                  $('.dtap2').append('</br>' + nextdose[i] + '<br>');
                 }
                 break;
               }
@@ -672,7 +727,7 @@ $(document).ready(function(){
                 $('.dtap').append('</br>' + firstdose + ' ');
                 $('.dtapbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                  $('.dtap2').append('</br>' + nextdose[i] + '<br>');
                 }
                 break;
               }
@@ -688,7 +743,7 @@ $(document).ready(function(){
                 $('.dtap').append('</br>' + firstdose + ' ');
                 $('.dtapbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                  $('.dtap2').append('</br>' + nextdose[i] + '<br>');
                 }
                 break;
               }
@@ -707,10 +762,10 @@ $(document).ready(function(){
               }
               nextdose.push('4th DTaP dose between 15 and 19 months old.');
               nextdose.push('5th DTaP dose (final dose) between 5 and 7 years old.');
-              $('.dtap').append('</br>' + firstdose + ' ');
+              $('.dtap').append('</br>' + firstdose);
               $('.dtapbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                $('.dtap2').append('</br>' + nextdose[i] + '<br>');
               }
               break;
             } 
@@ -744,7 +799,7 @@ $(document).ready(function(){
               $('.dtap').append('</br>' + firstdose + ' ');
               $('.dtapbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                $('.dtap2').append('</br>' + nextdose[i] + '<br>');
               }
               break;
             }
@@ -759,7 +814,7 @@ $(document).ready(function(){
               $('.dtap').append('</br>' + firstdose + ' ');
               $('.dtapbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                $('.dtap2').append('</br>' + nextdose[i] + '<br>');
               }
               break;
             }
@@ -791,7 +846,7 @@ $(document).ready(function(){
                     $('.dtap').append('</br>' + firstdose + ' ');
                     $('.dtapbutton').show();
                     for(i=0; i<nextdose.length; i++){
-                      $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                      $('.dtap2').append('</br>' + nextdose[i] + '<br>');
                     }
                     break;   
                   }
@@ -802,7 +857,7 @@ $(document).ready(function(){
                   $('.dtap').append('</br>' + firstdose + ' ');
                   $('.dtapbutton').show();
                   for(i=0; i<nextdose.length; i++){
-                    $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                    $('.dtap2').append('</br>' + nextdose[i] + '<br>');
                   }
                   break;  
                 }
@@ -818,7 +873,7 @@ $(document).ready(function(){
                 $('.dtap').append('</br>' + firstdose + ' ');
                 $('.dtapbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.dtap2').append('</br>' + nextdose[i] + '</br>');
+                  $('.dtap2').append('</br>' + nextdose[i] + '<br>');
                 }
                 break;  
               }
@@ -836,10 +891,10 @@ $(document).ready(function(){
                 firstdose.push('</br> 4th DTaP dose between 15 and 19 months old. (Between ' + dtapdose4a.toLocaleDateString() + ' and ' + dtapdose4b.toLocaleDateString() + ').');
               }
               nextdose.push('5th DTaP dose (final dose) between 5 and 7 years old.');
-              $('.dtap').append('</br>' + firstdose + ' ');
+              $('.dtap').append('</br>' + firstdose);
               $('.dtapbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.dtap2').append('</br>' + nextdose[i] + '</br>')
+                $('.dtap2').append('</br>' + nextdose[i] + '<br>')
               } 
               break; 
             }
@@ -867,7 +922,7 @@ $(document).ready(function(){
                 $('.dtap').append('</br>' + firstdose + ' ');
                 $('.dtapbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.dtap2').append('</br>' + nextdose[i] + '</br>')
+                  $('.dtap2').append('</br>' + nextdose[i] + '<br>')
                 } 
                 break; 
               }
@@ -957,7 +1012,7 @@ $(document).ready(function(){
             $('.hepb').append('</br>' + firstdose + ' ');
             $('.hepbbutton').show();
             for(i=0; i<nextdose.length; i++){
-              $('.hepb2').append('</br>' + nextdose[i] + '</br>')
+              $('.hepb2').append('</br>' + nextdose[i] + '<br>')
             }
             break;  
           }
@@ -974,7 +1029,7 @@ $(document).ready(function(){
           $('.hepb').append('</br>' + firstdose + ' ');
           $('.hepbbutton').show();
           for(i=0; i<nextdose.length; i++){
-            $('.hepb2').append('</br>' + nextdose[i] + '</br>')
+            $('.hepb2').append('</br>' + nextdose[i] + '<br>')
           }
           break;  
         }
@@ -1003,7 +1058,7 @@ $(document).ready(function(){
             $('.hepb').append('</br>' + firstdose + ' ');
             $('.hepbbutton').show();
             for(i=0; i<nextdose.length; i++){
-              $('.hepb2').append('</br>' + nextdose[i] + '</br>')
+              $('.hepb2').append('</br>' + nextdose[i] + '<br>')
             }
             break;  
           }
@@ -1053,7 +1108,7 @@ $(document).ready(function(){
           $('.hepb').append('</br>' + firstdose + ' ');
           $('.hepbbutton').show();
           for(i=0; i<nextdose.length; i++){
-            $('.hepb2').append('</br>' + nextdose[i] + '</br>')
+            $('.hepb2').append('</br>' + nextdose[i] + '<br>')
           }
           break;  
         }
@@ -1140,7 +1195,7 @@ $(document).ready(function(){
               $('.hib').append('</br>' + firstdose + ' ');
               $('.hibbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                $('.hib2').append('</br>' + nextdose[i] + '<br>');
               }
               break; 
             }
@@ -1152,7 +1207,7 @@ $(document).ready(function(){
               $('.hib').append('</br>' + firstdose + ' ');
               $('.hibbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                $('.hib2').append('</br>' + nextdose[i] + '<br>');
               }
               break;  
             }
@@ -1163,7 +1218,7 @@ $(document).ready(function(){
               $('.hib').append('</br>' + firstdose + ' ');
               $('.hibbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                $('.hib2').append('</br>' + nextdose[i] + '<br>');
               }
               break;  
             }
@@ -1173,7 +1228,7 @@ $(document).ready(function(){
               $('.hib').append('</br>' + firstdose + ' ');
               $('.hibbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                $('.hib2').append('</br>' + nextdose[i] + '<br>');
               }
               break; 
             }
@@ -1197,7 +1252,7 @@ $(document).ready(function(){
             $('.hib').append('</br>' + firstdose + ' ');
             $('.hibbutton').show();
             for(i=0; i<nextdose.length; i++){
-              $('.hib2').append('</br>' + nextdose[i] + '</br>');
+              $('.hib2').append('</br>' + nextdose[i] + '<br>');
             }
             break; 
           }
@@ -1223,7 +1278,7 @@ $(document).ready(function(){
               $('.hib').append('</br>' + firstdose + ' ');
               $('.hibbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                $('.hib2').append('</br>' + nextdose[i] + '<br>');
               }
               break; 
             }
@@ -1246,7 +1301,7 @@ $(document).ready(function(){
                 $('.hib').append('</br>' + firstdose + ' ');
                 $('.hibbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                  $('.hib2').append('</br>' + nextdose[i] + '<br>');
                 }
                 break; 
               }
@@ -1268,7 +1323,7 @@ $(document).ready(function(){
                 $('.hib').append('</br>' + firstdose + ' ');
                 $('.hibbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                  $('.hib2').append('</br>' + nextdose[i] + '<br>');
                 }
                 break; 
               }
@@ -1311,7 +1366,7 @@ $(document).ready(function(){
               $('.hib').append('</br>' + firstdose + ' ');
               $('.hibbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                $('.hib2').append('</br>' + nextdose[i] + '<br>');
               }
               break; 
             }
@@ -1333,7 +1388,7 @@ $(document).ready(function(){
                 $('.hib').append('</br>' + firstdose + ' ');
                 $('.hibbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                  $('.hib2').append('</br>' + nextdose[i] + '<br>');
                 }
                 break; 
               }
@@ -1359,7 +1414,7 @@ $(document).ready(function(){
                   $('.hib').append('</br>' + firstdose + ' ');
                   $('.hibbutton').show();
                   for(i=0; i<nextdose.length; i++){
-                    $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                    $('.hib2').append('</br>' + nextdose[i] + '<br>');
                   }
                   break; 
                 }
@@ -1382,7 +1437,7 @@ $(document).ready(function(){
                   $('.hib').append('</br>' + firstdose + ' ');
                   $('.hibbutton').show();
                   for(i=0; i<nextdose.length; i++){
-                    $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                    $('.hib2').append('</br>' + nextdose[i] + '<br>');
                   }
                   break; 
                 }
@@ -1409,7 +1464,7 @@ $(document).ready(function(){
                   $('.hib').append('</br>' + firstdose + ' ');
                   $('.hibbutton').show();
                   for(i=0; i<nextdose.length; i++){
-                    $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                    $('.hib2').append('</br>' + nextdose[i] + '<br>');
                   }
                   break; 
                 }
@@ -1427,10 +1482,10 @@ $(document).ready(function(){
                       nextdose.push('2nd HiB dose (final dose) 8 to 12 weeks after dose 1. (Between ' + hibentry18wks.toLocaleDateString() + ' and ' + hibentry112wks.toLocaleDateString() + ').');
                     }
                   }
-                  $('.hib').append('</br>' + firstdose + ' ');
+                  $('.hib').append('</br>' + firstdose);
                   $('.hibbutton').show();
                   for(i=0; i<nextdose.length; i++){
-                    $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                    $('.hib2').append('</br>' + nextdose[i] + '<br>');
                   }
                   break; 
                 }
@@ -1452,7 +1507,7 @@ $(document).ready(function(){
                 $('.hib').append('</br>' + firstdose + ' ');
                 $('.hibbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                  $('.hib2').append('</br>' + nextdose[i] + '<br>');
                 }
                 break; 
               }
@@ -1479,7 +1534,7 @@ $(document).ready(function(){
               $('.hib').append('</br>' + firstdose + ' ');
               $('.hibbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                $('.hib2').append('</br>' + nextdose[i] + '<br>');
               }
               break; 
             }
@@ -1512,7 +1567,7 @@ $(document).ready(function(){
               $('.hib').append('</br>' + firstdose + ' ');
               $('.hibbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                $('.hib2').append('</br>' + nextdose[i] + '<br>');
               }
               break;    
             }
@@ -1531,7 +1586,7 @@ $(document).ready(function(){
               $('.hib').append('</br>' + firstdose + ' ');
               $('.hibbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                $('.hib2').append('</br>' + nextdose[i] + '<br>');
               }
               break; 
             }
@@ -1552,7 +1607,7 @@ $(document).ready(function(){
               $('.hib').append('</br>' + firstdose + ' ');
               $('.hibbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                $('.hib2').append('</br>' + nextdose[i] + '<br>');
               }
               break;      
             }
@@ -1577,7 +1632,7 @@ $(document).ready(function(){
                   $('.hib').append('</br>' + firstdose + ' ');
                   $('.hibbutton').show();
                   for(i=0; i<nextdose.length; i++){
-                    $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                    $('.hib2').append('</br>' + nextdose[i] + '<br>');
                   }
                   break; 
                 }
@@ -1601,7 +1656,7 @@ $(document).ready(function(){
                   $('.hib').append('</br>' + firstdose + ' ');
                   $('.hibbutton').show();
                   for(i=0; i<nextdose.length; i++){
-                    $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                    $('.hib2').append('</br>' + nextdose[i] + '<br>');
                   }
                   break;  
                 }
@@ -1620,7 +1675,7 @@ $(document).ready(function(){
                   $('.hib').append('</br>' + firstdose + ' ');
                   $('.hibbutton').show();
                   for(i=0; i<nextdose.length; i++){
-                    $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                    $('.hib2').append('</br>' + nextdose[i] + '<br>');
                   }
                   break; 
                 }
@@ -1639,7 +1694,7 @@ $(document).ready(function(){
                   $('.hib').append('</br>' + firstdose + ' ');
                   $('.hibbutton').show();
                   for(i=0; i<nextdose.length; i++){
-                    $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                    $('.hib2').append('</br>' + nextdose[i] + '<br>');
                   }
                   break; 
                 }
@@ -1660,7 +1715,7 @@ $(document).ready(function(){
                 $('.hib').append('</br>' + firstdose + ' ');
                 $('.hibbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                  $('.hib2').append('</br>' + nextdose[i] + '<br>');
                 }
                 break;  
               }
@@ -1692,7 +1747,7 @@ $(document).ready(function(){
               $('.hib').append('</br>' + firstdose + ' ');
               $('.hibbutton').show();
               for(i=0; i<nextdose.length; i++){
-                $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                $('.hib2').append('</br>' + nextdose[i] + '<br>');
               }
               break; 
             }
@@ -1707,7 +1762,7 @@ $(document).ready(function(){
                 $('.hib').append('</br>' + firstdose + ' ');
                 $('.hibbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                  $('.hib2').append('</br>' + nextdose[i] + '<br>');
                 }
                 break; 
               }
@@ -1731,7 +1786,7 @@ $(document).ready(function(){
                   $('.hib').append('</br>' + firstdose + ' ');
                   $('.hibbutton').show();
                   for(i=0; i<nextdose.length; i++){
-                    $('.hib2').append('</br>' + nextdose[i] + '</br>');
+                    $('.hib2').append('</br>' + nextdose[i] + '<br>');
                   }
                   break; 
                 }
@@ -1833,7 +1888,7 @@ $(document).ready(function(){
                 $('.pedvax').append('</br>' + firstdose + ' ');
                 $('.pedvaxbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.pedvax2').append('</br>' + nextdose[i] + '</br>');
+                  $('.pedvax2').append('</br>' + nextdose[i] + '<br>');
                 } 
                 break;
               }
@@ -1857,7 +1912,7 @@ $(document).ready(function(){
                 $('.pedvax').append('</br>' + firstdose + ' ');
                 $('.pedvaxbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.pedvax2').append('</br>' + nextdose[i] + '</br>');
+                  $('.pedvax2').append('</br>' + nextdose[i] + '<br>');
                 } 
                 break;
               }
@@ -1886,7 +1941,7 @@ $(document).ready(function(){
                 $('.pedvax').append('</br>' + firstdose + ' ');
                 $('.pedvaxbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.pedvax2').append('</br>' + nextdose[i] + '</br>');
+                  $('.pedvax2').append('</br>' + nextdose[i] + '<br>');
                 } 
                 break;
               }
@@ -1903,7 +1958,7 @@ $(document).ready(function(){
                 $('.pedvax').append('</br>' + firstdose + ' ');
                 $('.pedvaxbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.pedvax2').append('</br>' + nextdose[i] + '</br>');
+                  $('.pedvax2').append('</br>' + nextdose[i] + '<br>');
                 } 
                 break; 
               }
@@ -1926,7 +1981,7 @@ $(document).ready(function(){
                 $('.pedvax').append('</br>' + firstdose + ' ');
                 $('.pedvaxbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.pedvax2').append('</br>' + nextdose[i] + '</br>');
+                  $('.pedvax2').append('</br>' + nextdose[i] + '<br>');
                 } 
                 break; 
               }
@@ -1945,7 +2000,7 @@ $(document).ready(function(){
                 $('.pedvax').append('</br>' + firstdose + ' ');
                 $('.pedvaxbutton').show();
                 for(i=0; i<nextdose.length; i++){
-                  $('.pedvax2').append('</br>' + nextdose[i] + '</br>');
+                  $('.pedvax2').append('</br>' + nextdose[i] + '<br>');
                 } 
                 break;
               }
@@ -1972,7 +2027,7 @@ $(document).ready(function(){
                   $('.pedvax').append('</br>' + firstdose + ' ');
                   $('.pedvaxbutton').show();
                   for(i=0; i<nextdose.length; i++){
-                    $('.pedvax2').append('</br>' + nextdose[i] + '</br>');
+                    $('.pedvax2').append('</br>' + nextdose[i] + '<br>');
                   } 
                   break;
                 }
@@ -2938,7 +2993,7 @@ $(document).ready(function(){
                 else{
                   firstdose.push('</br> 3rd Rotateq dose (final dose) 4 to 10 weeks after dose 2. (Between ' + rotateqdose3a.toLocaleDateString() + ' and ' + rotateqdose3b.toLocaleDateString() + ').');
                 }
-                $('.rotateq').append('</br>' + firstdose + '</br>');
+                $('.rotateq').append('</br>' + firstdose);
                 break;
               }
             }
@@ -3002,7 +3057,7 @@ $(document).ready(function(){
       poliodose3a = poliodose3a4wks;
     }
     var poliodose3ainterval;
-    if(today<years4){
+    if(today<year4){
       poliodose3ainteraval=polioentry24wks;
     }
     else{
@@ -3031,7 +3086,7 @@ $(document).ready(function(){
             firstdose.push('</br> 1st Polio dose overdue. Catch up schedule:');
             nextdose.push('1st Polio dose today.');
             nextdose.push('2nd Polio dose 4 to 8 weeks after dose 1.');
-            if(today<years4){
+            if(today<year4){
               nextdose.push('3rd Polio dose 4 to 8 weeks after dose 2.');
               nextdose.push('4th Polio dose (final dose) 6 mosnths after dose 3 AND after 4 years old.');
             }
@@ -3327,23 +3382,654 @@ $(document).ready(function(){
 
       loop =1;
     }
-    while(loop=0);
+    while(loop==0);
 
     var varicellaentry1 = new Date(varicelladates[0]);
     var varicellaentry2 = new Date(varicelladates[1]);
     birthday = new Date(birthdayvalue);
-    var varicelladose1a = new Date(birthday.setDate(birthday.getDate()+12));
+    var varicelladose1a = new Date(birthday.setMonth(birthday.getMonth()+12));
     birthday = new Date(birthdayvalue);
-    var varicelladose1b = new Date(birthday.setDate(birthday.getDate()+16));
+    var varicelladose1b = new Date(birthday.setMonth(birthday.getMonth()+16));
     birthday = new Date(birthdayvalue);
     var varicelladose2a = new Date(birthday.setFullYear(birthday.getFullYear()+4));
     birthday = new Date(birthdayvalue);
+    var varicelladose2aa = new Date(varicellaentry1.setDate(varicellaentry1.getDate()+28));
+    birthday = new Date(birthdayvalue);
     var varicelladose2b = new Date(birthday.setFullYear(birthday.getFullYear()+7));
     birthday = new Date(birthdayvalue);
+    loop=0;
 
+    do {
+      var firstdose=[];
+      var nextdose=[];
+      if(vaqtadates.length>0){
+        loop=1;
+      }
+      else if(varicelladates.length==0){
+        if(today>varicelladose1b){
+          if(today<year13){
+            firstdose.push('<br> 1st Varicella dose overdue. Catch up schedule:');
+            nextdose.push('1st Varicella dose today.');
+            nextdose.push('2nd Varicella dose (final dose) 3 months after 1st dose.');
+            $('.varicella').append('</br>' + firstdose);
+            $('.varicellabutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.varicella2').append('</br>' + nextdose[i] + '<br>');
+            }
+            break;      
+          }
+          else{
+            firstdose.push('<br> 1st Varicella dose overdue. Catch up schedule:');
+            nextdose.push('1st Varicella dose today.');
+            nextdose.push('2nd Varicella dose (final dose) 4 to 8 weeks after 1st dose.');
+            $('.varicella').append('</br>' + firstdose);
+            $('.varicellabutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.varicella2').append('</br>' + nextdose[i] + '<br>');
+            }
+            break;
+          }
+        }
+        else{
+          if(today>varicelladose1a){
+            firstdose.push('<br> 1st Varicella dose between 12 and 15 months old. (By ' + varicelladose1b.toLocaleDateString() + ').');
+          }
+          else{
+            firstdose.push('<br> 1st Varicella dose between 12 and 15 months old. (Between ' + varicelladose1a.toLocaleDateString() + ' and ' + varicelladose1b.toLocaleDateString() + ').');
+          }
+          nextdose.push('2nd Varicella dose (final dose) between 4 and 6 years old. (Between ' + varicelladose2a.toLocaleDateString() + ' and ' + varicelladose2b.toLocaleDateString() + ').');
+        }
+        $('.varicella').append('<br>' + firstdose);
+        $('.varicellabutton').show();
+        for(i=0; i<nextdose.length; i++){
+          $('.varicella2').append('</br>' + nextdose[i] + '<br>');
+        }
+        break;
+      }
+      if(varicelladates.length==1){
+        if(varicellaentry1<varicelladose1a){
+          firstdose.push('<br> 1st Varicella dose administered too early. See physician.');
+        }
+        else if(varicellaentry1>varicelladose1b){
+          firstdose.push('<br> 1st Varicella dose administered too late. See physician.');
+        }
+        else{
+          if(today>varicelladose2b){
+            firstdose.push('<br> 2nd Varicella dose overdue. See physician.');
+          }
+          else{
+            if(today>varicelladose2a){
+              firstdose.push('<br> 2nd Varicella dose between 4 and 6 years old. (By ' + varicelladose2b.toLocaleDateString() + ').');
+            }
+            else{
+              firstdose.push('<br> 2nd Varicella dose between 4 and 6 years old. (Between ' + varicelladose2a.toLocaleDateString() + 'and ' + varicelladose2b.toLocaleDateString() + ').');
+            }
+          }
+        }
+        $('.varicella').append('<br>' + firstdose);
+        break;
+      }
+      if(varicelladates.length==2){
+        if(varicellaentry1<varicelladose1a){
+          firstdose.push('<br> 1st Varicella dose administered too early. See physician.');
+        }
+        else if(varicellaentry1>varicelladose1b){
+          firstdose.push('<br> 1st Varicella dose administered too late. See physician.');
+        }
+        else if(varicellaentry2<varicelladose2aa){
+          firstdose.push('<br> 2nd Varicella dose administered too early. See physician.');
+        }
+        else if(varicellaentry2>varicelladose2b){
+          firstdose.push('<br> 2nd Varicella dose administered too late. See physician.');
+        }
+        else{
+          firstdose.push('<br> 2nd Varicella dose right.');
+        }
+        $('.varicella').append('<br>' + firstdose);
+        break;
+      }
+      loop=1;
+    }
+    while(loop==0);
 
+    var hepaentry1 = new Date(hepadates[0]);
+    var hepaentry2 = new Date(hepadates[1]);
+    birthday = new Date(birthdayvalue);
+    var hepadose1a = year1;
+    var hepadose2a = new Date(hepaentry1.setMonth(hepaentry1.getMonth()+6));
+    hepaentry1 = new Date(hepadates[0]);
+    var hepadose2b = new Date(hepaentry1.setMonth(hepaentry1.getMonth()+12));
+    hepaentry1 = new Date(hepadates[0]);
+    var hepaentry2 = new Date(hepadates[1]);
+    loop=0;
+
+    do{
+      var firstdose = [];
+      var nextdose = [];
+      if(vaqtadates.length>0){
+        loop=1;
+      }
+      else{
+        if(hepadates.length==0){
+          if(today>hepadose1a){
+            firstdose.push('<br> 1st Hepatitis A (Havrix) dose today.');
+            nextdose.push('2nd Hepatitis A (Havrix) dose (final dose) 6 to 12 months after dose 1.');
+          }
+          else{
+            firstdose.push('<br> 1st Hepatitis A (Havrix) dose after 1 year old. (After ' + hepadose1a.toLocaleDateString() + ' ).');
+            nextdose.push('2nd Hepatitis A (Havrix) dose (final dose) 6 to 12 months after dose 1.');
+          }
+          $('.hepa').append('<br>' + firstdose);
+          $('.hepabutton').show();
+          for(i=0; i<nextdose.length; i++){
+            $('.hepa2').append('<br>' + nextdose[i] + '<br>');
+          }
+          break;
+        }
+        else if(hepadates.length==1){
+          if(hepaentry1<hepadose1a){
+            firstdose.push('<br> 1st Hepatitis A (Havrix) dose administered too early. See physician.');
+          }
+          else if(today>hepadose2b){
+            firstdose.push('<br> 2nd Hepatitis A (Havrix) dose overdue. See physician.');
+          }
+          else{
+            if(today>hepadose2a){
+              firstdose.push('<br> 2nd Hepatitis A (Havrix) dose (final dose) 6 to 12 months after dose 1. (By ' + hepadose2b.toLocaleDateString() + ').');
+            }
+            else{
+              firstdose.push('<br> 2nd Hepatitis A (Havrix) dose (final dose) 6 to 12 months after dose 1. (Between ' + hepadose2a.toLocaleDateString() + ' and ' + hepadose2b.toLocaleDateString() + ').');
+            }
+          }
+          $('.hepa').append('<br>' + firstdose);
+          break;
+        }
+        else{
+          if(hepaentry1<hepadose1a){
+            firstdose.push('<br> 1st Hepatitis A (Havrix) dose administered too early. See physician.');
+          }
+          else if(hepaentry2<hepadose2a){
+            firstdose.push('<br> 2nd Hepatitis A (Havrix) dose administered too early. See physician.');
+          }
+          else if(hepaentry2>hepadose2b){
+            firstdose.push('<br> 2nd Hepatitis A (Havrix) dose administered too late. See physician.');
+          }
+          $('.hepa').append('<br>' + firstdose);
+          break;
+        }
+        loop=1;
+      }
+    }
+    while(loop==0);
+
+    var vaqtaentry1 = new Date(vaqtadates[0]);
+    var vaqtaentry2 = new Date(vaqtadates[1]);
+    var vaqtadose1a = year1;
+    var vaqtadose2a = new Date(vaqtaentry1.setMonth(vaqtaentry1.getMonth()+6));
+    var vaqtaentry1 = new Date(vaqtadates[0]);
+    var vaqtadose2b = new Date(vaqtaentry1.setMonth(vaqtaentry1.getMonth()+18));
+    var vaqtaentry1 = new Date(vaqtadates[0]);
+    loop=0;
+
+    do{
+      var firstdose = [];
+      var nextdose = [];
+      if(hepadates.length>0){
+        loop=1;
+      }
+      else{
+        if(vaqtadates.length==1){
+          if(vaqtaentry1<vaqtadose1a){
+            firstdose.push('<br> 1st Hepatitis A (Vaqta) dose administered too early. See physician.');
+          }
+          else if(today>vaqtadose2b){
+            firstdose.push('<br> 2nd Hepatitis A (Vaqta) dose overdue. See physician.');
+          }
+          else{
+            if(today>vaqtadose2a){
+              firstdose.push('<br> 2nd Hepatitis A (Vaqta) dose (final dose) 6 to 18 months after dose 1. (By ' + vaqtadose2b.toLocaleDateString() + ').');
+            }
+            else{
+              firstdose.push('<br> 2nd Hepatitis A (Vaqta) dose (final dose) 6 to 18 months after dose 1. (Between ' + vaqtadose2a.toLocaleDateString() + ' and ' + vaqtadose2b.toLocaleDateString() + ').');
+            }
+          }
+        }
+        else if(vaqtadates.length==2){
+          if(vaqtaentry1<vaqtadose1a){
+            firstdose.push('<br> 1st Hepatitis A (Vaqta) dose administered too early. See physician.');
+          }
+          else if(vaqtaentry2<vaqtadose2a){
+            firstdose.push('<br> 2nd Hepatitis A (Vaqta) dose administered too early. See physician.');
+          }
+          else if(vaqtaentry2>vaqtadose2b){
+            firstdose.push('<br> 2nd Hepatitis A (Vaqta) dose administered too late. See physician.');
+          }
+        }
+        $('.vaqta').append('<br>' + firstdose);
+        break;
+        loop=1;
+      }
+    }
+    while(loop==0);
+
+    var menentry1 = new Date(mendates[0]);
+    var menentry2 = new Date(mendates[1]);
+    var mendose1a = year11;
+    var mendose1b = year13;
+    var mendose2a = year16;
+    var mendose2b = year17;
+    var menentry18wks = new Date(menentry1.setDate(menentry1.getDate() + 56));
+    var menentry1 = new Date(mendates[0]);
+    loop=0;
+
+    do{
+      var firstdose = [];
+      var nextdose = [];
+      if(mendates.length==0){
+        if(today>mendose1b){
+          if(today<year16){
+            firstdose.push('1st Meningococcal dose overdue. Catch up schedule:');
+            nextdose.push('1st Meningococcal dose today.');
+            nextdose.push('2nd Meningococcal dose (final dose) between 16 and 18 years old AND at least 8 weeks after dose 1.');
+            $('.men').append('<br>' + firstdose);
+            $('.menbutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.men2').append('<br>' + nextdose[i] + '<br>');
+            }
+            break;
+          }
+          else if(today<year19){
+            firstdose.push('1st Meningococcal dose overdue. Catch up schedule:');
+            nextdose.push('1st Meningococcal dose (final dose) today.');
+            $('.men').append('<br>' + firstdose);
+            $('.menbutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.men2').append('<br>' + nextdose[i] + '<br>');
+            }
+            break;
+          }
+          else{
+            firstdose.push('1st Meningococcal dose overdue. See physician.');
+            $('.men').append('<br>' + firstdose);
+            break;
+          }
+        }
+        else{
+          if(today>mendose1a){
+            firstdose.push('1st Meningococcal dose between 11 and 12 years old. (By ' + mendose1b.toLocaleDateString() + ').');
+          }
+          else{
+            firstdose.push('1st Meningococcal dose between 11 and 12 years old. Between ' + mendose1a.toLocaleDateString() + ' and ' + mendose1b.toLocaleDateString() + ').');
+          }
+          nextdose.push('2nd Meningococcal dose (final dose) at 16 years old. (Between ' + mendose2a.toLocaleDateString() + ' and ' + mendose2b.toLocaleDateString() + ').');
+        }
+        $('.men').append('<br>' + firstdose);
+        $('.menbutton').show();
+        for(i=0; i<nextdose.length; i++){
+          $('.men2').append('<br>' + nextdose[i] + '<br>');
+        }
+        break;
+      }
+      else if(mendates.length==1){
+        if(menentry1<mendose1a){
+          firstdose.push('1st Meningococcal dose administered too early. See physician.');
+          $('.men').append('<br>' + firstdose);
+          break;
+        }
+        else if(menentry1>mendose1b){
+          if(menentry1<year16 && today<year19){
+            firstdose.push('1st Meningococcal dose administered too late. Catch up schedule:');
+            if(today>menentry18wks){
+              nextdose.push('2nd Meningococcal dose (final dose) between 16 and 18 years old AND at least 8 weeks after dose 1. (Between ' + year16.toLocaleDateString() + ' and ' + year19.toLocaleDateString() + ').');
+            }
+            else{
+              nextdose.push('2nd Meningococcal dose (final dose) between 16 and 18 years old AND at least 8 weeks after dose 1. (Between ' + menentry18wks.toLocaleDateString() + ' and ' + year19.toLocaleDateString() + ').');
+            }
+            $('.men').append('<br>' + firstdose);
+            $('.menbutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.men2').append('<br>' + nextdose[i] + '<br>');
+            }
+            break;
+          }
+          else{
+            firstdose.push('1st Meningococcal dose administered too late. See physician.');
+            $('.men').append('<br>' + firstdose);
+            break;
+          }
+        }
+        else if(today>mendose2b){
+          firstdose.push('2nd Meningococcal dose overdue. See physician.');
+          $('.men').append('<br>' + firstdose);
+          break;
+        }
+        else{
+          if(today>mendose2a){
+            firstdose.push('2nd Meningococcal dose at 16 years old. (By ' + mendose2b.toLocaleDateString() + ').');
+          }
+          else{
+            firstdose.push('2nd Meningococcal dose at 16 years old. (Between ' + mendose2a.toLocaleDateString() + ' and ' + mendose2b.toLocaleDateString() + ').');
+          }
+          $('.men').append('<br>' + firstdose);
+          break;
+        }
+      }
+      else if(mendates.length==2){
+        if(menentry1<mendose1a){
+          firstdose.push('1st Meningococcal dose administered too early. See physician.');
+        }
+        else if(menentry1>mendose1b){
+          firstdose.push('1st Meningococcal dose administered too late. See physician.');
+        }
+        else if(menentry2<mendose2a){
+          firstdose.push('2nd Meningococcal dose administered too early. See physician.');
+        }
+        else if(menentry2>mendose2b){
+          firstdose.push('2nd Meningococcal dose administered too late. See physician.');
+        }
+        $('.men').append('<br>' + firstdose);
+        break;
+      }
+      loop=1;
+    }
+    while(loop==0);
+
+    var tdapentry1 = new Date(tdapdates[0]);
+    var tdapdose1a = year11;
+    var tdapdose1b = year13;
+    loop=0;
+
+    do{
+      var firstdose = [];
+      var nextdose = [];
+      if(tdapdates.length==0){
+        if(today>tdapdose1b){
+          if(today<year19){
+            firstdose.push('<br> 1st TDaP dose overdue. Catch up schedule:');
+            nextdose.push('1st TDaP dose (final dose) today. Td booster every 10 years.');
+            $('.tdap').append('<br>' + firstdose);
+            $('.tdapbutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.tdap2').append('<br>' + nextdose[i] + '<br>');
+            }
+            break;
+          }
+          else{
+            firstdose.push('<br> 1st TDaP dose overdue. See physician.');
+            $('.tdap').append('<br>' + firstdose);
+            break;
+          }
+        }
+        else{
+          if(today>tdapdose1a){
+            firstdose.push('<br> 1st TDaP dose (final dose) between 11 and 12 years old. (By ' + tdapdose1b.toLocaleDateString() + ').');
+          }
+          else{
+            firstdose.push('<br> 1st TDaP dose (final dose) between 11 and 12 years old. (Between ' + tdapdose1a.toLocaleDateString() + ' and ' + tdapdose1b.toLocaleDateString() + ').');
+          }
+        }
+        $('.tdap').append('<br>' + firstdose);
+        break;
+      }
+      else if(tdapdates.length==1){
+        if(tdapentry1<tdapdose1a){
+          if(tdapentry1>year7 && today<year13){
+            firstdose.push('<br> 1st TDaP dose administered too early. Catch up schedule:');
+            nextdose.push('2nd TDaP (final dose) today.');
+            $('.tdap').append('<br>' + firstdose);
+            $('.tdapbutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.tdap2').append('<br>' + nextdose[i] + '<br>');
+            }
+            break;
+          }
+          else{
+            firstdose.push('<br> 1st TDaP dose administered too early. See physician.');
+            $('.tdap').append('<br>' + firstdose);
+            break;
+          }
+        }
+        $('.tdap').append('<br>' + firstdose);
+        $('.tdapbutton').show();
+        for(i=0; i<nextdose.length; i++){
+          $('.tdap2').append('<br>' + nextdose[i] + '<br>');
+        }
+        break;
+      }
+      loop=1;
+    }
+    while(loop==0);
+
+    var hpventry1 = new Date(hpvdates[0]);
+    var hpventry2 = new Date(hpvdates[1]);
+    var hpventry3 = new Date(hpvdates[2]);
+    var hpvdose1aa = year9;
+    var hpvdose1a = year11;
+    var hpvdose1b = year13;
+    var hpvdose1bb = year19;
+    var hpvdose2a = new Date(hpventry1.setMonth(hpventry1.getMonth()+6));
+    hpventry1 = new Date(hpvdates[0]);
+    var hpvdose2b = new Date(hpventry1.setMonth(hpventry1.getMonth()+12));
+    hpventry1 = new Date(hpvdates[0]);
+    var hpvdose2b2 = new Date(hpventry1.setMonth(hpventry1.getMonth()+2));
+    hpventry1 = new Date(hpvdates[0]);
+    var hpvdose2a2 = new Date(hpventry1.setMonth(hpventry1.getMonth()+1));
+    hpventry1 = new Date(hpvdates[0]);
+    var hpvdose3a = new Date(hpventry1.setMonth(hpventry1.getMonth()+6));
+    hpventry1 = new Date(hpvdates[0]);
+    var hpvdose3b = new Date(hpventry1.setMonth(hpventry1.getMonth()+7));
+    hpventry1 = new Date(hpvdates[0]);
+    var hpvdose2aa = new Date(hpventry1.setMonth(hpventry1.getMonth()+5));
+    hpventry1 = new Date(hpvdates[0]);
+    var hpventry212wks = new Date(hpventry2.setDate(hpventry2.getDate()+84));
+    hpventry2 = new Date(hpvdates[1]);
+    var hpventry216wks = new Date(hpventry2.setDate(hpventry2.getDate()+112));
+    hpventry2 = new Date(hpvdates[1]);
+    var hpventry15mos = new Date(hpventry1.setMonth(hpventry1.getMonth()+5));
+    var hpventry1 = new Date(hpvdates[0]);
+
+    do{
+      var firstdose = [];
+      var nextdose = [];
+      if(hpvdates.length==0){
+        if(today>hpvdose1b){
+          firstdose.push('<br> 1st HPV dose overdue. See physician.');
+          $('.hpv').append('<br>' + firstdose);
+          break;
+        }
+        else{
+          if(today>hpvdose1a){
+            firstdose.push('<br> 1st HPV dose between 11 and 12 years old. (By ' + hpvdose1b.toLocaleDateString() + ').');
+          }
+          else{
+            firstdose.push('<br> 1st HPV dose between 11 and 12 years old. (Between ' + hpvdose1a.toLocaleDateString() + ' and ' + hpvdose1b.toLocaleDateString() + ').');
+          }
+          nextdose.push('2nd HPV dose 6 to 12 months after dose 1.');
+        }
+        $('.hpv').append('<br>' + firstdose);
+        $('.hpvbutton').show();
+        for(i=0; i<nextdose.length; i++){
+          $('.hpv2').append('<br>' + nextdose[i] + '<br>');
+        }
+        break;
+      }
+      else if(hpvdates.length==1){
+        if(hpventry1<hpvdose1aa){
+          firstdose.push('<br> 1st HPV dose administered too early. See physician.');
+        }
+        else if (hpventry1>hpvdose1bb){
+          firstdose.push('<br> 1st HPV dose administered too late. See physician.');
+        }
+        else{
+          if(hpventry1<year15){
+            if(today>hpvdose2b){
+              firstdose.push('<br> 2nd HPV dose overdue. See physician.');
+            }
+            else if(today>hpvdose2a){
+              firstdose.push('<br> 2nd HPV dose (final dose) 6 to 12 months after dose 1. (By ' + hpvdose2b.toLocaleDateString() + ').');
+            }
+            else{
+              firstdose.push('<br> 2nd HPV dose (final dose) 6 to 12 months after dose 1. (Between ' + hpvdose2a.toLocaleDateString() + ' and ' + hpvdose2b.toLocaleDateString() + ').');
+            }
+          }
+          else{
+            if(today>hpvdose2b2){
+              firstdose.push('<br> 2nd HPV dose overdue. See physician.');
+            }
+            else{
+              firstdose.push('<br> 2nd HPV dose 1 to 2 months after dose 1. (Between ' + hpvdose2a2.toLocaleDateString() + ' and ' + hpvdose2b2.toLocaleDateString() + ').');
+            }
+            nextdose.push('3rd HPV dose (final dose) 6 months after dose 2.');
+            $('.hpv').append('<br>' + firstdose);
+            $('.hpvbutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.hpv2').append('<br>' + nextdose[i] + '<br>');
+            }
+            break;
+          }
+        }
+        $('.hpv').append('<br>' + firstdose);
+        break;
+      }
+      else if(hpvdates.length==2){
+        if(hpventry1<hpvdose1aa){
+          firstdose.push('<br> 1st HPV dose administered too early. See physician.');
+          $('.hpv').append('<br>' + firstdose);
+          break;
+        }
+        else if(hpventry1>hpvdose1bb){
+          firstdose.push('<br> 1st HPV dose administered too late. See physician.');
+          $('.hpv').append('<br>' + firstdose);
+          break;
+        }
+        else if(hpventry1<year15){
+          if(hpventry2<hpvdose2aa){
+            firstdose.push('<br> 2nd HPV dose administered too early. Catch up schedule:');
+            nextdose.push('3rd HPV dose (final dose) today.');
+            $('.hpv').append('<br>' + firstdose);
+            $('.hpvbutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.hpv2').append('<br>' + nextdose[i] + '<br>');
+            }
+            break;
+          }
+          else if(hpventry2>hpvdose2b){
+            firstdose.push('<br> 2nd HPV dose administered too late. See physician.');
+            $('.hpv').append('<br>' + firstdose);
+            break;
+          }
+        }
+        else{
+          if(hpventry2<hpvdose2a2){
+            if(today<hpvdose3b){
+              firstdose.push('<br> 2nd HPV dose administered too early. Catch up schedule:');
+              nextdose.push('3rd HPV dose today.');
+              nextdose.push('4th HPV dose 6 months after dose 1.');
+              $('.hpv').append('<br>' + firstdose);
+              $('.hpvbutton').show();
+              for(i=0; i<nextdose.length; i++){
+                $('.hpv2').append('<br>' + nextdose[i] + '<br>');
+              }
+              break;
+            }
+            else{
+              firstdose.push('<br> 2nd HPV dose administered too early. See physician.');
+              $('.hpv').append('<br>' + firstdose);
+              break;
+            }
+          }
+          else if(hpventry2>hpvdose2b2){
+            firstdose.push('<br> 2nd HPV dose administered too late. See physician.');
+            $('.hpv').append('<br>' + firstdose);
+            break;
+          }
+          else{
+            if(today>hpvdose3b){
+              firstdose.push('<br> 3rd HPV dose overdue. See physician.');
+            }
+            else if(today>hpvdose3a){
+              firstdose.push('<br> 3rd HPV dose (final dose) 6 months after dose 1. (By ' + hpvdose3b.toLocaleDateString() + ').');
+            }
+            else{
+              firstdose.push('<br> 3rd HPV dose (final dose) 6 months after dose 1. (Between ' + hpvdose3a.toLocaleDateString() + ' and ' + hpvdose3b.toLocaleDateString() + ').');
+            }
+            $('.hpv').append('<br>' + firstdose);
+            break;
+          }
+        }
+      }
+      else if(hpvdates.length==3){
+        if(hpventry1<hpvdose1aa){
+          firstdose.push('<br> 1st HPV dose administered too early. See physician.');
+          $('.hpv').append('<br>' + firstdose);
+          break;
+        }
+        else if(hpventry1>hpvdose1bb){
+          firstdose.push('<br> 1st HPV dose administered too late. See physician.');
+          $('.hpv').append('<br>' + firstdose);
+          break;
+        }
+        else if(hpventry1<year15 && hpventry2>hpvdose2b){
+          firstdose.push('<br> 2nd HPV dose administered too late. See physician.');
+          $('.hpv').append('<br>' + firstdose);
+          break;
+        }
+        else if(hpventry1>year15 && hpventry2<hpvdose2a2){
+          if(today>hpvdose3b){
+            firstdose.push('<br> 2nd HPV dose administered too early. See physician.');
+            $('.hpv').append('<br>' + firstdose);
+            break;
+          }
+          else{
+            firstdose.push('<br> 2nd HPV dose administered too early. Catch up schedule:');
+            if(hpventry3>hpvdose2a2){
+              nextdose.push('4rd HPV dose (final dose) 12 to 16 weeks after dose 2. (By ' + hpventry216wks.toLocaleDateString() + ').');
+            }
+            else{
+              nextdose.push('4rd HPV dose (final dose) 12 to 16 weeks after dose 2. (Between ' + hpventry212wks.toLocaleDateString() + ' and ' + hpvnetry216wks.toLocaleDateString() + ').');
+            }
+            $('.hpv').append('<br>' + firstdose);
+            $('.hpvbutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.hpv2').append('<br>' + nextdose[i] + '<br>');
+            }
+            break;
+          }
+        }
+        else if(hpventry1>year15 && hpventry2>hpvdose2b2){
+          firstdose.push('<br> 2nd HPV dose administered too late. See physician.');
+          $('.hpv').append('<br>' + firstdose);
+          break;
+        }
+        else if(hpventry1>year15 && hpventry3<hpvdose3a){
+          if(today>hpvdose3b){
+            firstdose.push('<br> 3rd HPV dose administered too early. See physician.');
+            $('.hpv').append('<br>' + firstdose);
+            break;
+          }
+          else{
+            firstdose.push('<br> 3rd HPV dose administered too early. Catch up schedule:');
+            nextdose.push('4th HPV dose (final dose) today.');
+            $('.hpv').append('<br>' + firstdose);
+            $('.hpvbutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.hpv2').append('<br>' + nextdose[i] + '<br>');
+            }
+            break;
+          }
+        }
+        else if(hpventry1>year15 && hpventry3>hpvdose3b){
+          firstdose.push('<br> 3rd HPV dose administered too late. See physician.');
+          $('.hpv').append('<br>' + firstdose);
+          break;
+        }
+      }
+      loop=1
+    }
+    while(loop=0);
 
   })
+
   
   var hello=0;
   $('.dtapbutton').click(function(){
@@ -3372,7 +4058,6 @@ $(document).ready(function(){
       hola=0;
     }
   });
-
 
   var nihao=0;
   $('.hibbutton').click(function(){
@@ -3490,6 +4175,90 @@ $(document).ready(function(){
     $('#add').hide();
     $('#addName').hide();
   });
+
+  var coffee=0;
+  $('.hepabutton').click(function(){
+    if(coffee==0){
+      $('.hepa2').slideDown();
+      this.value='\u25B2';
+      coffee=1;
+    }
+    else{
+      $('.hepa2').slideUp();
+      this.value='\u25BC';
+      coffee=0;
+    }
+  });
+
+  $('#add').click(function(){
+    $('#add').hide();
+    $('#addName').hide();
+  });
+
+  var tea=0;
+  $('.vaqtabutton').click(function(){
+    if(tea==0){
+      $('.vaqta2').slideDown();
+      this.value='\u25B2';
+      tea=1;
+    }
+    else{
+      $('.vaqta2').slideUp();
+      this.value='\u25BC';
+      tea=0;
+    }
+  });
+
+  var boba=0;
+  $('.menbutton').click(function(){
+    if(boba==0){
+      $('.men2').slideDown();
+      this.value='\u25B2';
+      boba=1;
+    }
+    else{
+      $('.men2').slideUp();
+      this.value='\u25BC';
+      boba=0;
+    }
+  });
+
+  var lentil=0;
+  $('.tdapbutton').click(function(){
+    if(lentil==0){
+      $('.tdap2').slideDown();
+      this.value='\u25B2';
+      lentil=1;
+    }
+    else{
+      $('.tdap2').slideUp();
+      this.value='\u25BC';
+      lentil=0;
+    }
+  });
+
+  $('#add').click(function(){
+    $('#add').hide();
+    $('#addName').hide();
+  });
   
+  var nugget=0;
+  $('.hpvbutton').click(function(){
+    if(nugget==0){
+      $('.hpv2').slideDown();
+      this.value='\u25B2';
+      nugget=1;
+    }
+    else{
+      $('.hpv2').slideUp();
+      this.value='\u25BC';
+      nugget=0;
+    }
+  });
+
+  $('#add').click(function(){
+    $('#add').hide();
+    $('#addName').hide();
+  });
   
 });
