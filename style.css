@@ -3,7 +3,7 @@
   	display: none;
   }
 
-.dtap2, .hepb2, .hib2, .pedvax2, .pcv2, .rotarix2, .rotateq2, .polio2, .mmr2 {
+.dtap2, .hepb2, .hib2, .pedvax2, .pcv2, .rotarix2, .rotateq2, .polio2, .mmr2, .varicella2, .hepa2, .vaqta2, .men2, .tdap2, .hpv2 {
 	display: none;
 }
 
@@ -55,7 +55,27 @@
 	display: inline;
 }
 
-.dtapbutton, .hibbutton, .varicellabutton, .mmrbutton, .poliobutton, .rotateqbutton, .rotarixbutton, .pcvbutton, .pedvaxbutton, .hepbbutton, .dtapbutton {
+.hepa, .hepabutton {
+	display: inline;
+}
+
+.vaqta, .vaqtabutton {
+	display: inline;
+}
+
+.men, .menbutton {
+	display: inline;
+}
+
+.tdap, .tdapbutton {
+	display: inline;
+}
+
+.hpv, .hpvbutton {
+	display: inline;
+}
+
+.dtapbutton, .hibbutton, .varicellabutton, .mmrbutton, .poliobutton, .rotateqbutton, .rotarixbutton, .pcvbutton, .pedvaxbutton, .hepbbutton, .hepabutton, .vaqtabutton, .menbutton, .tdapbutton, .hpvbutton {
 	display: none;
 }
 
