@@ -2343,6 +2343,7 @@ $(document).ready(function(){
             nextdose.push('2nd PCV13 dose 4 to 8 weeks after dose 1.');
             nextdose.push('3rd PCV13 dose 4 to 8 weeks after dose 2.');
             nextdose.push('4th PCV13 dose (final dose) 12 to 15 months old.');
+            nextdose.push('PPSV23 at age 65.');
             $('.pcv').append('</br>' + firstdose + ' ');
             $('.pcvbutton').show();
             for(i=0; i<nextdose.length; i++){
@@ -2354,6 +2355,7 @@ $(document).ready(function(){
             firstdose.push('</br> 1st PCV13 dose overdue. Catch up schedule:');
             nextdose.push('1st PCV13 dose today.');
             nextdose.push('2nd PCV13 dose (final dose) at least 8 weeks after dose 2.');
+            nextdose.push('PPSV23 at age 65.');
             $('.pcv').append('</br>' + firstdose + ' ');
             $('.pcvbutton').show();
             for(i=0; i<nextdose.length; i++){
@@ -2364,6 +2366,7 @@ $(document).ready(function(){
           else if (today>months24 && today<months60){
             firstdose.push('</br> 1st PCV13 dose overdue. Catch up schedule: ');
             nextdose.push('1st PCV13 dose (final dose) today.');
+            nextdose.push('PPSV23 at age 65.');
             $('.pcv').append('</br>' + firstdose + ' ');
             $('.pcvbutton').show();
             for(i=0; i<nextdose.length; i++){
@@ -2387,6 +2390,7 @@ $(document).ready(function(){
           nextdose.push('2nd PCV13 dose between 4 and 6 months old AND at least 4 weeks after 1st PCV13 dose.');
           nextdose.push('3rd PCV13 dose between 6 and 9 months old AND at least 4 weeks after 2nd PCV13 dose.');
           nextdose.push('4th PCV13 dose (final dose) between 12 and 18 months old.');
+          nextdose.push('PPSV23 at age 65.');
           $('.pcv').append('</br>' + firstdose + ' ');
           $('.pcvbutton').show();
           for(i=0; i<nextdose.length; i++){
@@ -2409,10 +2413,12 @@ $(document).ready(function(){
               if(today>pcventry14wks){
                 nextdose.push('2nd PCV13 dose today.');
                 nextdose.push('3rd PCV13 (final dose) at least 8 weeks after dose 2 AND after 12 months old.');
+                nextdose.push('PPSV23 at age 65.');
               }
               else{
                 nextdose.push('2nd PCV13 dose 4 to 8 weeks after dose 1. (Between ' + pcventry14wks.toLocaleDateString() + ' and ' + pcventry18wks.toLocaleDateString() + ').');
                 nextdose.push('3rd PCV13 dose (final dose) at least 8 weeks after dose 2 AND after 12 months old.');
+                nextdose.push('PPSV23 at age 65.');
               }
             }
             else if(today>months12 && today<months24){
@@ -2421,18 +2427,22 @@ $(document).ready(function(){
                 if(today>pcventry14wks){
                   nextdose.push('2nd PCV13 dose today.');
                   nextdose.push('3rd PCV13 dose (final dose) 8 weeks after dose 2.');
+                  nextdose.push('PPSV23 at age 65.');
                 }
                 else{
                   nextdose.push('2nd PCV13 dose 4 to 8 weeks after dose 1. (Between ' + pcventry14wks.toLocaleDateString() + ' and ' + pcventry18wks.toLocaleDateString() + ').');
                   nextdose.push('3rd PCV13 dose (final dose) 8 weeks after dose 2.');
+                  nextdose.push('PPSV23 at age 65.');
                 }
               }
               else{
                 if(today>pcventry18wks){
                   nextdose.push('2nd PCV13 dose today.');
+                  nextdose.push('PPSV23 at age 65.');
                 }
                 else{
                   nextdose.push('2nd PCV13 dose (final dose) 8 to 12 weeks after dose 1. (Between ' + pcventry18wks.toLocaleDateString() + ' and ' + pcventry112wks.toLocaleDateString() + ').');
+                  nextdose.push('PPSV23 at age 65.');
                 }
               }
               $('.pcv').append('</br>' + firstdose + ' ');
@@ -2446,6 +2456,7 @@ $(document).ready(function(){
               if(pcventry1<months12){
                 firstdose.push('</br> 1st PCV13 dose administered too late. Catch up schedule:');
                 nextdose.push('2nd PCV13 dose (final dose) today. No additional doses needed.');
+                nextdose.push('PPSV23 at age 65.');
                 $('.pcv').append('</br>' + firstdose + ' ');
                 $('.pcvbutton').show();
                 for(i=0; i<nextdose.length; i++){
@@ -2458,9 +2469,11 @@ $(document).ready(function(){
                   firstdose.push('</br> 1st PCV13 dose administered too late. Catch up schedule:');
                   if(today>pcventry18wks){
                     nextdose.push('2nd PCV13 dose (final dose) today. No additional doses needed.');
+                    nextdose.push('PPSV23 at age 65.');
                   }
                   else{
                     nextdose.push('2nd PCV13 dose (final dose) between 8 and 12 weeks after dose 1. (Between ' + pcventry18wks.toLocaleDateString() + ' and ' + pcventry112wks.toLocaleDateString() + ').');
+                    nextdose.push('PPSV23 at age 65.');
                   }
                 $('.pcv').append('</br>' + firstdose + ' ');
                 $('.pcvbutton').show();
@@ -2496,6 +2509,7 @@ $(document).ready(function(){
                 }
                 nextdose.push('3rd PCV13 dose 4 to 8 weeks after dose 2.');
                 nextdose.push('4th PCV13 dose (final dose) between 12 and 18 months old. (Between ' + pcvdose4a.toLocaleDateString() + ' and ' + pcvdose4b.toLocaleDateString() + ').');
+                nextdose.push('PPSV23 at age 65.');
                 $('.pcv').append('</br>' + firstdose + ' ');
                 $('.pcvbutton').show();
                 for(i=0; i<nextdose.length; i++){
@@ -2507,11 +2521,13 @@ $(document).ready(function(){
                 firstdose.push('</br> 2nd PCV13 dose overdue. Catch up schedule: ');
                 if(today>pcventry14wks){
                   nextdose.push('2nd PCV13 dose today.');
+                  nextdose.push('PPSV23 at age 65.');
                 }
                 else{
                   nextdose.push('2nd PCV13 dose 4 to 8 weeks after 1st dose. (Between ' + pcventry14wks.toLocaleDateString() + ' and ' + pcventry18wks.toLocaleDateString() + ').');
                 }
                 nextdose.push('3rd PCV13 dose (final dose) at least 8 weeks after dose 2 and after 12 months old.');
+                nextdose.push('PPSV23 at age 65.');
                 $('.pcv').append('</br>' + firstdose + ' ');
                 $('.pcvbutton').show();
                 for(i=0; i<nextdose.length; i++){
@@ -2525,18 +2541,22 @@ $(document).ready(function(){
                   if(today>pcventry14wks){
                     nextdose.push('2nd PCV13 dose today.');
                     nextdose.push('3rd PCV13 dose (final dose) at least 8 weeks after dose 2.');
+                    nextdose.push('PPSV23 at age 65.');
                   }
                   else{
                     nextdose.push('2nd PCV13 dose 4 to 8 weeks after dose 1. (Between ' + pcventry14wks.toLocaleDateString() + ' and ' + pcventry18wks.toLocaleDateString() + ').');
                     nextdose.push('3rd PCV13 dose (final dose) at least 8 weeks after dose 2.');
+                    nextdose.push('PPSV23 at age 65.');
                   }
                 }
                 else{
                   if(today>pcventry18wks){
                     nextdose.push('2nd PCV13 dose (final dose) today.');
+                    nextdose.push('PPSV23 at age 65.');
                   }
                   else{
                     nextdose.push('2nd PCV13 dose (final dose) 8 to 12 weeks after dose 1. (Between ' + pcventry18wks.toLocaleDateString() + ' and ' + pcventry112wks.toLocaleDateString() + ').');
+                    nextdose.push('PPSV23 at age 65.');
                   }
                 }
                 $('.pcv').append('</br>' + firstdose + ' ');
@@ -2550,14 +2570,17 @@ $(document).ready(function(){
                 firstdose.push('</br> 2nd PCV13 dose overdue. Catch up schedule:');
                 if(pcventry1<year1){
                   nextdose.push('2nd PCV13 dose (final dose) today.');
+                  nextdose.push('PPSV23 at age 65.');
                 }
                 else{
                   if(pcventry1<year2){
                     if(today>pcventry18wks){
                       nextdose.push('2nd PCV13 dose (final dose) today.');
+                      nextdose.push('PPSV23 at age 65.');
                     }
                     else{
                       nextdose.push('2nd PCV13 dose (final dose) between 8 and 12 weeks after dose 1. (Between ' + pcventry18wks.toLocaleDateString() + ' and ' + pcventry112wks.toLocaleDateString() + ').');
+                      nextdose.push('PPSV23 at age 65.');
                     }
                   }
                 }
@@ -2583,6 +2606,7 @@ $(document).ready(function(){
               }
               nextdose.push('3rd PCV13 dose between 6 and 9 months old AND at least 4 weeks after 2nd PCV13 dose.');
               nextdose.push('4th PCV13 dose (final dose) between 12 and 18 months old.');
+              nextdose.push('PPSV23 at age 65.');
               $('.pcv').append('</br>' + firstdose + ' ');
               $('.pcvbutton').show();
               for(i=0; i<nextdose.length; i++){
@@ -2608,14 +2632,17 @@ $(document).ready(function(){
                 if(today>pcventry24wks){
                   nextdose.push('3rd PCV13 dose today.');
                   nextdose.push('4th PCV13 dose at least 8 weeks after dose 3 AND after 12 months old.');
+                  nextdose.push('PPSV23 at age 65.');
                 }
                 else{
                   nextdose.push('3rd PCV13 dose 8 to 12 weeks after dose 2. (Between ' + pcventry28wks.toLocaleDateString() + ' and ' + pcventry212wks.toLocaleDateString() + ').');
                   nextdose.push('4th PCV13 dose (final dose) at least 8 weeks after dose 3 AND after 12 months old.');
+                  nextdose.push('PPSV23 at age 65.');
                 }
               }
               else{
                 nextdose.push('3rd PCV13 dose at least 8 weeks after dose 2 AND after 12 months old. (After ' + pcvdose3final.toLocaleDateString() + ').');
+                nextdose.push('PPSV23 at age 65.');
               }
               $('.pcv').append('</br>' + firstdose + ' ');
               $('.pcvbutton').show();
@@ -2629,9 +2656,11 @@ $(document).ready(function(){
                 firstdose.push('</br> 2nd PCV13 dose administered too late. Catch up schedule:');
                 if(today>pcventry28wks){
                   nextdose.push('3rd PCV13 dose (final dose) today.');
+                  nextdose.push('PPSV23 at age 65.');
                 }
                 else{
                   nextdose.push('3rd PCV13 dose (final dose) 8 to 12 weeks after dose 2. (Between ' + pcventry28wks.toLocaleDateString() + ' and ' + pcventry212wks.toLocaleDateString() + ').');
+                  nextdose.push('PPSV23 at age 65.');
                 }
               }  
               $('.pcv').append('</br>' + firstdose + ' ');
@@ -2646,6 +2675,7 @@ $(document).ready(function(){
               if(pcventry1<months12){
                 if(pcventry2<months12){
                   nextdose.push('3rd PCV13 dose (final dose) today.');
+                  nextdose.push('PPSV23 at age 65.');
                 }
               }
               $('.pcv').append('</br>' + firstdose);
@@ -2676,9 +2706,11 @@ $(document).ready(function(){
                   if(today>pcventry24wks){
                     nextdose.push('3rd PCV13 dose today.');
                     nextdose.push('4th PCV13 dose (final dose) at least 8 weeks after dose 3 AND after 12 months old.');
+                    nextdose.push('PPSV23 at age 65.');
                   }
                   else{
                     nextdose.push('3rd PCV13 dose (final dose) at least 8 weeks after dose 3 AND after 12 months old.');
+                    nextdose.push('PPSV23 at age 65.');
                   }
                   $('.pcv').append('</br>' + firstdose + ' ');
                   $('.pcvbutton').show();
@@ -2693,9 +2725,11 @@ $(document).ready(function(){
                   firstdose.push('</br> 3rd PCV13 dose overdue. Catch up schedule:');
                   if(today>pcventry28wks){
                     nextdose.push('3rd PCV13 dose (final dose) today.');
+                    nextdose.push('PPSV23 at age 65.');
                   }
                   else{
                     nextdose.push('3rd PCV13 dose (final dose) 8 to 12 weeks after dose 2. (Between ' + pcventry28wks.toLocaleDateString() + ' and ' + pcventry212wks.toLocaleDateString() + ').');
+                    nextdose.push('PPSV23 at age 65.');
                   }
                   $('.pcv').append('</br>' + firstdose + ' ');
                   $('.pcvbutton').show();
@@ -2710,10 +2744,12 @@ $(document).ready(function(){
                 if(pcventry1<months12){
                   if(pcventry2<months12){
                     nextdose.push('3rd PCV13 dose (final dose) today.');
+                    nextdose.push('PPSV23 at age 65.');
                   }
                   else{
                     if(pcventry2<year2){
                       nextdose.push('3rd PCV13 dose (final dose) today.');
+                      nextdose.push('PPSV23 at age 65.');
                       break;
                     }
                   }
@@ -2739,6 +2775,7 @@ $(document).ready(function(){
                 firstdose.push('</br> 3rd PCV13 dose between 6 and 9 months old. (Between ' + pcvdose3a.toLocaleDateString() + ' and ' + pcvdose3b.toLocaleDateString() + ').');
               }
               nextdose.push('4th PCV13 dose (final dose) between 12 and 18 months old.');
+              nextdose.push('PPSV23 at age 65.');
               $('.pcv').append('</br>' + firstdose + ' ');
               $('.pcvbutton').show();
               for(i=0; i<nextdose.length; i++){
@@ -2763,9 +2800,11 @@ $(document).ready(function(){
               if(pcventry3<months12){
                 if(today>pcventry38wks){
                   nextdose.push('4th PCV13 dose (final dose) today.');
+                  nextdose.push('PPSV23 at age 65.');
                 }
                 else{
                   nextdose.push('4th PCV13 dose (final dose) 8 to 12 weeks after dose 3. (Between ' + pcventry38wks.toLocaleDateString() + ' and ' + pcventry312wks.toLocaleDateString() + ').');
+                  nextdose.push('PPSV23 at age 65.');
                 }
                 $('.pcv').append('</br>' + firstdose + ' ');
                 $('.pcvbutton').show();
@@ -2779,6 +2818,7 @@ $(document).ready(function(){
               firstdose.push('</br> 3rd PCV13 dose administered too late. Catch up schedule:');
               if(pcventry3<months12){
                 nextdose.push('4th PCV13 dose (final dose) today.');
+                nextdose.push('PPSV23 at age 65.');
               }
               else{
               }
@@ -2809,9 +2849,11 @@ $(document).ready(function(){
                 if(pcventry3<months12){
                   if(today>pcventry38wks){
                     nextdose.push('4th PCV13 dose (final dose) today.');
+                    nextdose.push('PPSV23 at age 65.');
                   }
                   else{
                     nextdose.push('4th PCV13 dose (final dose) between 8 and 12 weeks after dose 3. (Between ' + pcventry38wks.toLocaleDateString() + ' and ' + pcventry318wks.toLocaleDateString() + ').');
+                    nextdose.push('PPSV23 at age 65.');
                   }
                   $('.pcv').append('</br>' + firstdose + ' ');
                   $('.pcvbutton').show();
@@ -2830,9 +2872,11 @@ $(document).ready(function(){
             else{
               if(today>pcvdose4a){
                 firstdose.push('</br> 4th PCV13 dose (final dose) between 12 and 18 months old. (By ' + pcvdose4b.toLocaleDateString() + ').');
+                firstdose.push('PPSV23 at age 65.');
               }
               else{
                 firstdose.push('</br> 4th PCV13 dose (final dose) between 12 and 18 months old. (Between ' + pcvdose4a.toLocaleDateString() + ' and ' + pcvdose4b.toLocaleDateString() + ').');
+                firstdose.push('PPSV23 at age 65.');
               }
               $('.pcv').append('</br>' + firstdose + '</br>');
               break;
