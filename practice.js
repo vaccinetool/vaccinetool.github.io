@@ -2,7 +2,8 @@ $(document).ready(function(){
 
   
   
-  var forms = [$('.entry1'), $('.entry2'), $('.entry3'), $('.entry4'), $('.entry5'), $('.entry6'), $('.entry7'), $('.entry8')];
+  var forms = [$('.entry1'), $('.entry2'), $('.entry3'), $('.entry4'), $('.entry5'), $('.entry6'), $('.entry7'), $('.entry8'),
+  $('.entry9'), $('.entry10'), $('.entry11'), $('.entry12'), $('.entry13'), $('.entry14'), $('.entry15'), $('.entry16'), $('.entry17')];
   var lines = [$('.line1'), $('.line2'), $('.line3'), $('.line4'), $('.line5'), $('.line6'), $('.line7'), $('.line8'), $('.line9'), $('.line10'), 
   $('.line11'), $('.line12'), $('.line13'), $('.line14'), $('.line15'), $('.line16'), $('.line17'), $('.line18'), $('.line19'), $('.line20')];
   var formNumber = 0;
@@ -42,7 +43,11 @@ $(document).ready(function(){
   var mendates = [];
   var tdapdates = [];
   var hpvdates = [];
-  var dates = ['date1', 'date2', 'date3', 'date4', 'date5', 'date6', 'date7', 'date8'];
+  var ppsvdates = [];
+  var rzvdates = [];
+  var zvldates = [];
+  var dates = ['date1', 'date2', 'date3', 'date4', 'date5', 'date6', 'date7', 'date8', 'date9', 'date10', 'date11',
+  'date12', 'date13', 'date14', 'date15', 'date16', 'date17'];
   var missingvacs=[];
   var nextvacs=[];
   var today = new Date();
@@ -221,6 +226,14 @@ $(document).ready(function(){
     birthday = new Date(birthdayvalue);
     var year9 = new Date(birthday.setFullYear(birthday.getFullYear()+9));
     birthday = new Date(birthdayvalue);
+    var year65 = new Date(birthday.setFullYear(birthday.getFullYear()+65));
+    birthday = new Date(birthdayvalue);
+    var year50 = new Date(birthday.setFullYear(birthday.getFullYear()+50));
+    birthday = new Date(birthdayvalue);
+    var year60 = new Date(birthday.setFullYear(birthday.getFullYear()+60));
+    birthday = new Date(birthdayvalue);
+    var year26 = new Date(birthday.setFullYear(birthday.getFullYear()+26));
+    birthday = new Date(birthdayvalue);
 
 
     var selection1=$('#choice1 option:selected');
@@ -231,7 +244,13 @@ $(document).ready(function(){
     var selection6=$('#choice6 option:selected');
     var selection7=$('#choice7 option:selected');
     var selection8=$('#choice8 option:selected');
-    selected=[selection1, selection2, selection3, selection4, selection5, selection6, selection7, selection8];
+    var selection9=$('#choice9 option:selected');
+    var selection10=$('#choice10 option:selected');
+    var selection11=$('#choice11 option:selected');
+    var selection12=$('#choice12 option:selected');
+    var selection13=$('#choice13 option:selected');
+    var selection14=$('#choice14 option:selected');
+    selected=[selection1, selection2, selection3, selection4, selection5, selection6, selection7, selection8, selection9, selection10, selection11, selection12, selection13, selection14];
       
     
     for (i=0; i<formNumber; i++){
@@ -356,6 +375,30 @@ $(document).ready(function(){
         for(j=0; j<vaccines[0].length; j++){
           if (document.getElementById(vaccines[i][j]).value!==''){
             hpvdates.push(document.getElementById(vaccines[i][j]).value);
+          }
+        }
+      }
+      else if(selections[i].text()=='Pneumococcal (PPSV23)'){
+        ppsvdates.push(document.getElementById(dates[i]).value);
+        for(j=0; j<vaccines[0].length; j++){
+          if (document.getElementById(vaccines[i][j]).value!==''){
+            ppsvdates.push(document.getElementById(vaccines[i][j]).value);
+          }
+        }
+      }
+      else if(selections[i].text()=='Zoster (RZV)'){
+        rzvdates.push(document.getElementById(dates[i]).value);
+        for(j=0; j<vaccines[0].length; j++){
+          if (document.getElementById(vaccines[i][j]).value!==''){
+            rzvdates.push(document.getElementById(vaccines[i][j]).value);
+          }
+        }
+      }
+      else if(selections[i].text()=='Zoster (ZVL)'){
+        zvldates.push(document.getElementById(dates[i]).value);
+        for(j=0; j<vaccines[0].length; j++){
+          if (document.getElementById(vaccines[i][j]).value!==''){
+            zvldates.push(document.getElementById(vaccines[i][j]).value);
           }
         }
       }
@@ -3308,7 +3351,8 @@ $(document).ready(function(){
           if(today<lastmmr){
             firstdose.push('</br> 1st MMR dose overdue. Catch up schedule:');
             nextdose.push('1st MMR dose today.');
-            nextdose.push('2nd MMR dose (final dose) 4 weeks after dose 1.');
+            nextdose.push('2nd MMR dose 4 weeks after dose 1.');
+            nextdose.push('3rd MMR dose (final dose) after 18 years old. (After ' + year19.toLocaleDateString() + ').');
             $('.mmr').append('</br>' + firstdose + ' ');
             $('.mmrbutton').show();
             for(i=0; i<nextdose.length; i++){
@@ -3329,7 +3373,8 @@ $(document).ready(function(){
           else{
             firstdose.push('</br> 1st MMR dose between 12 and 15 months old. (Between ' + mmrdose1a.toLocaleDateString() + ' and ' + mmrdose1b.toLocaleDateString() + ').');
           }
-          nextdose.push('2nd MMR dose (final dose) between 4 and 6 years old. (Between ' + mmrdose2a.toLocaleDateString() + ' and ' + mmrdose2b.toLocaleDateString() + ').');
+          nextdose.push('2nd MMR dose between 4 and 6 years old. (Between ' + mmrdose2a.toLocaleDateString() + ' and ' + mmrdose2b.toLocaleDateString() + ').');
+          nextdose.push('3rd MMR dose (final dose) after 18 years old. (After ' + year19.toLocaleDateString() + ').');
           $('.mmr').append('</br>' + firstdose + ' ');
           $('.mmrbutton').show();
           for(i=0; i<nextdose.length; i++){
@@ -3358,13 +3403,18 @@ $(document).ready(function(){
           }
           else{
             if(today>mmrdose2a){
-              firstdose.push('</br> 2nd MMR dose (final dose) between 4 and 6 years old. (By ' + mmrdose2b.toLocaleDateString() + ').');
+              firstdose.push('</br> 2nd MMR dose between 4 and 6 years old. (By ' + mmrdose2b.toLocaleDateString() + ').');
             }
             else{
-              firstdose.push('</br> 2nd MMR dose (final dose) between 4 and 6 years old. (Between ' + mmrdose2a.toLocaleDateString() + ' and ' + mmrdose2b.toLocaleDateString() + ').');
+              firstdose.push('</br> 2nd MMR dose between 4 and 6 years old. (Between ' + mmrdose2a.toLocaleDateString() + ' and ' + mmrdose2b.toLocaleDateString() + ').');
             }
-            $('.mmr').append('</br>' + firstdose + '</br>');
-            break;
+            nextdose.push('3rd MMR dose (final dose) after 18 years old. (After ' + year19.toLocaleDateString() + ').');
+            $('.mmr').append('</br>' + firstdose + ' ');
+            $('.mmrbutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.mmr2').append('</br>' + nextdose[i] + '</br>');
+            }
+            break; 
           }
         }
       }
@@ -3397,6 +3447,8 @@ $(document).ready(function(){
     birthday = new Date(birthdayvalue);
     var varicelladose2b = new Date(birthday.setFullYear(birthday.getFullYear()+7));
     birthday = new Date(birthdayvalue);
+    var varicellaentry14wks = new Date(varicellaentry1.setDate(varicellaentry1.getDate()+28));
+    var varicellaentry1 = new Date(varicelladates[0]);
     loop=0;
 
     do {
@@ -3447,7 +3499,15 @@ $(document).ready(function(){
         break;
       }
       if(varicelladates.length==1){
-        if(varicellaentry1<varicelladose1a){
+        if(today>year19){
+          if(today>varicellaentry14wks){
+            firstdose.push('<br> 2nd Varicella dose (final dose) at least 4 weeks after dose 1. (Today).');
+          }
+          else{
+            firstdose.push('<br> 2nd Varicella dose (final dose) at least 4 weeks after dose 1. (After ' + varicellaentry14wks.toLocaleDateString() + ').');
+          }
+        }
+        else if(varicellaentry1<varicelladose1a){
           firstdose.push('<br> 1st Varicella dose administered too early. See physician.');
         }
         else if(varicellaentry1>varicelladose1b){
@@ -3459,17 +3519,17 @@ $(document).ready(function(){
           }
           else{
             if(today>varicelladose2a){
-              firstdose.push('<br> 2nd Varicella dose between 4 and 6 years old. (By ' + varicelladose2b.toLocaleDateString() + ').');
+              firstdose.push('<br> 2nd Varicella dose (final dose) between 4 and 6 years old. (By ' + varicelladose2b.toLocaleDateString() + ').');
             }
             else{
-              firstdose.push('<br> 2nd Varicella dose between 4 and 6 years old. (Between ' + varicelladose2a.toLocaleDateString() + 'and ' + varicelladose2b.toLocaleDateString() + ').');
+              firstdose.push('<br> 2nd Varicella dose (final dose) between 4 and 6 years old. (Between ' + varicelladose2a.toLocaleDateString() + 'and ' + varicelladose2b.toLocaleDateString() + ').');
             }
           }
         }
         $('.varicella').append('<br>' + firstdose);
         break;
       }
-      if(varicelladates.length==2){
+      else{
         if(varicellaentry1<varicelladose1a){
           firstdose.push('<br> 1st Varicella dose administered too early. See physician.');
         }
@@ -3481,9 +3541,6 @@ $(document).ready(function(){
         }
         else if(varicellaentry2>varicelladose2b){
           firstdose.push('<br> 2nd Varicella dose administered too late. See physician.');
-        }
-        else{
-          firstdose.push('<br> 2nd Varicella dose right.');
         }
         $('.varicella').append('<br>' + firstdose);
         break;
@@ -3594,7 +3651,7 @@ $(document).ready(function(){
             }
           }
         }
-        else if(vaqtadates.length==2){
+        else{
           if(vaqtaentry1<vaqtadose1a){
             firstdose.push('<br> 1st Hepatitis A (Vaqta) dose administered too early. See physician.');
           }
@@ -3714,7 +3771,7 @@ $(document).ready(function(){
           break;
         }
       }
-      else if(mendates.length==2){
+      else{
         if(menentry1<mendose1a){
           firstdose.push('1st Meningococcal dose administered too early. See physician.');
         }
@@ -3771,7 +3828,7 @@ $(document).ready(function(){
         $('.tdap').append('<br>' + firstdose);
         break;
       }
-      else if(tdapdates.length==1){
+      else{
         if(tdapentry1<tdapdose1a){
           if(tdapentry1>year7 && today<year13){
             firstdose.push('<br> 1st TDaP dose administered too early. Catch up schedule:');
@@ -3833,9 +3890,25 @@ $(document).ready(function(){
       var nextdose = [];
       if(hpvdates.length==0){
         if(today>hpvdose1b){
-          firstdose.push('<br> 1st HPV dose overdue. See physician.');
-          $('.hpv').append('<br>' + firstdose);
-          break;
+          if(today<year26){
+            if(today>year15){
+              firstdose.push('<br> 1st HPV dose overdue. Catch up schedule:')
+              nextdose.push('1st HPV dose today.');
+              nextdose.push('2nd HPV dose between 1 and 2 months after dose 1.')
+              nextdose.push('3rd HPV dose (final dose) 6 months after dose 1.');
+              $('.hpv').append('<br>' + firstdose);
+              $('.hpvbutton').show();
+              for(i=0; i<nextdose.length; i++){
+                $('.hpv2').append('<br>' + nextdose[i] + '<br>');
+              }
+              break;
+            }
+            else{
+              firstdose.push('<br> 1st HPV dose overdue. See physician.');
+              $('.hpv').append('<br>' + firstdose);
+              break;
+            }
+          }
         }
         else{
           if(today>hpvdose1a){
@@ -3863,7 +3936,19 @@ $(document).ready(function(){
         else{
           if(hpventry1<year15){
             if(today>hpvdose2b){
-              firstdose.push('<br> 2nd HPV dose overdue. See physician.');
+              if(today<year26){
+                firstdose.push('<br> 2nd HPV dose overdue. Catch up schedule:')
+                nextdose.push('2nd HPV dose (final dose) today.');
+                $('.hpv').append('<br>' + firstdose);
+                $('.hpvbutton').show();
+                for(i=0; i<nextdose.length; i++){
+                  $('.hpv2').append('<br>' + nextdose[i] + '<br>');
+                }
+                break;
+              }
+              else{
+                firstdose.push('<br> 2nd HPV dose overdue. See physician.');
+              }
             }
             else if(today>hpvdose2a){
               firstdose.push('<br> 2nd HPV dose (final dose) 6 to 12 months after dose 1. (By ' + hpvdose2b.toLocaleDateString() + ').');
@@ -3913,7 +3998,7 @@ $(document).ready(function(){
             }
             break;
           }
-          else if(hpventry2>hpvdose2b){
+          else if(hpventry2>hpvdose2b && today>year26){
             firstdose.push('<br> 2nd HPV dose administered too late. See physician.');
             $('.hpv').append('<br>' + firstdose);
             break;
@@ -3958,7 +4043,7 @@ $(document).ready(function(){
           }
         }
       }
-      else if(hpvdates.length==3){
+      else{
         if(hpventry1<hpvdose1aa){
           firstdose.push('<br> 1st HPV dose administered too early. See physician.');
           $('.hpv').append('<br>' + firstdose);
@@ -4027,6 +4112,280 @@ $(document).ready(function(){
       loop=1
     }
     while(loop=0);
+
+    var ppsventry1 = new Date(ppsvdates[0]);
+
+    do{
+      var firstdose = [];
+      var nextdose = [];
+
+      if(today>year65 && pcvdates.length==0 && ppsvdates.length==0){
+        firstdose.push('<br> 1st PCV13 dose today.');
+        nextdose.push('1st PPSV23 dose at least 1 year after PCV13.');
+        $('.ppsv').append('<br>' + firstdose);
+        $('.ppsvbutton').show();
+        for(i=0; i<nextdose.length; i++){
+          $('.ppsv2').append('<br>' + nextdose[i] + '<br>');
+        }
+        break;
+      }
+      else if(today>65 && pcvdates.length==0 && ppsvdates.length>0){
+        for(i=0; i<ppsvdates.length; i++){
+          var ppsvlastdose = new Date (ppsvdates[i]);
+        }
+        var ppsvdose2a = new Date(ppsvlastdose.setFullYear(ppsvlastdose.getFullYear()+5));
+        for(i=0; i<ppsvdates.length; i++){
+          var ppsvlastdose = new Date (ppsvdates[i]);
+        }
+        var pcvdose1a = new Date(ppsvlastdose.setFullYear(ppsvlastdose.getFullYear()+1));
+        for(i=0; i<ppsvdates.length; i++){
+          var ppsvlastdose = new Date (ppsvdates[i]);
+        }
+        if(today>pcvdose1a){
+          firstdose.push('<br> 1st PCV13 dose at least 1 year after last PPSV23 dose. (Today.)');
+        }
+        else{
+          firstdose.push('<br> 1st PCV13 dose at least 1 year after last PPSV23 dose. (After ' + pcvdose1a.toLocaleDateString() + ').');
+        }
+        nextdose.push('Next PPSV23 dose at least 5 years after last PPSV23 dose AND at least 1 year after most recent PCV13 dose.');
+        $('.ppsv').append('<br>' + firstdose);
+        $('.ppsvbutton').show();
+        for(i=0; i<nextdose.length; i++){
+          $('.ppsv2').append('<br>' + nextdose[i] + '<br>');
+        }
+        break;
+      }
+
+      loop=1;
+    }
+    while(loop=0);
+
+
+    var zvlentry1 = new Date(zvldates[0]);
+    var zvldose1a = new Date(birthday.setFullYear(birthday.getFullYear()+60));
+    birthday = new Date(birthdayvalue);
+    var rzventry1 = new Date(rzvdates[0]);
+    var rzventry2 = new Date(rzvdates[1]);
+    var rzvdose2a = new Date(rzventry1.setMonth(rzventry1.getMonth()+2));
+    rzventry1 = new Date(rzvdates[0]);
+    var rzvdose2aa = new Date(zvlentry1.setMonth(zvlentry1.getMonth()+2));
+    zvlentry1 = new Date(zvldates[0]);
+    var rzvdose2b = new Date(rzventry1.setMonth(rzventry1.getMonth()+6));
+    var firstrzv50;
+    rzventry1 = new Date(rzvdates[0]);
+    
+    //what if there are TWO early entries
+
+    for(i=0; i<rzvdates.length; i++){
+      if (rzvdates[i]>year50){
+        firstrzv50 = rzvdates[i];
+        break;
+      }
+    }
+    loop=0;
+
+
+    do{
+      var firstdose = [];
+      var nextdose = [];
+      if(zvldates.length==0){
+        if(rzvdates.length==0){
+          if(today<year50){
+            firstdose.push('<br> 1st Zoster (RZV) dose after 50 years old. (After ' + year50.toLocaleDateString() + ').');
+            nextdose.push('2nd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1.');
+          }
+          else{
+            firstdose.push('<br> 1st Zoster (RZV) dose today.');
+            nextdose.push('2nd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1.');
+          }
+          $('.rzv').append('<br>' + firstdose);
+          $('.rzvbutton').show();
+          for(i=0; i<nextdose.length; i++){
+            $('.rzv2').append('<br>' + nextdose[i] + '<br>');
+          }
+          break;
+        }
+        else if(rzvdates.length==1){
+          if(rzventry1<year50){
+            firstdose.push('<br> 1st Zoster (RZV) dose administered too early. Catch up schedule:');
+            if(today>year50){
+              nextdose.push('1st Zoster (RZV) dose after 50 years old. (Today)');
+              nextdose.push('2nd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1.');
+            }
+            else{
+              nextdose.push('1st Zoster (RZV) dose after 50 years old. (After ' + year50.toLocaleDateString() + ').');
+              nextdose.push('2nd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1.');
+            }
+            $('.rzv').append('<br>' + firstdose);
+            $('.rzvbutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.rzv2').append('<br>' + nextdose[i] + '<br>');
+            }
+            break;
+          }
+          else{
+            if(today>rzvdose2a){
+              firstdose.push('<br> 2nd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1. (By ' + rzvdose2b.toLocaleDateString() + ').');
+            }
+            else{
+              firstdose.push('<br> 2nd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1. (Between ' + rzvdose2a.toLocaleDateString() + ' and ' + rzvdose2b.toLocaleDateString() + ').');
+            }
+            $('.rzv').append('<br>' + firstdose);
+            break;
+          }
+        }
+        else{
+          if(rzventry1<year50){
+            firstdose.push('<br> 1st Zoster (RZV) dose administered too early. Catch up schedule:' + firstrzv50);
+            if(rzventry2>year50){
+              if(today>rzvdose2a){
+                nextdose.push('3rd Zoster (RZV) dose (final dose) 2 to 6 months after dose 2. (By ' + firstrzv50);
+              }
+              else{
+                nextdose.push('3rd Zoster (RZV) dose (final dose) 2 to 6 months after dose 2. (Between ' + firstrzv50);
+              }
+            }
+            $('.rzv').append('<br>' + firstdose);
+            $('.rzvbutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.rzv2').append('<br>' + nextdose[i] + '<br>');
+            }
+            break;
+          }
+          else if(rzventry2<rzvdose2a){
+            if(today>rzvdose2a){
+              firstdose.push('<br> 2nd Zoster (RZV) dose administered too early. Catch up schedule:');
+              nextdose.push('3rd Zoster (RZV) dose (final dose) today.');
+            }
+            else{
+              firstdose.push('<br> 2nd Zoster (RZV) dose administered too early. Catch up schedule:');
+              nextdose.push('3rd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1. (Between ' + rzvdose2a.toLocaleDateString() + ' and ' + rzvdose2b.toLocaleDateString() + ').');
+            }
+            $('.rzv').append('<br>' + firstdose);
+            $('.rzvbutton').show();
+            for(i=0; i<nextdose.length; i++){
+              $('.rzv2').append('<br>' + nextdose[i] + '<br>');
+            }
+            break;
+          }
+          else if(rzventry2>rzvdose2b){
+            firstdose.push('<br> 2nd Zoster (RZV) dose administered too late. See physician.');
+            $('.rzv').append('<br>' + firstdose);
+            break;
+          }
+        }
+      }
+      else if(zvldates.length==1){
+        if(zvlentry1<zvldose1a){
+          if(today<year60){
+            if(rzvdates.length==0){
+              if(today<year50){
+                firstdose.push('<br> 1st Zoster (RZV) dose after 50 years old. (After ' + year50.toLocaleDateString() + ').');
+                nextdose.push('2nd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1.');
+              }
+              else{
+                firstdose.push('<br> 1st Zoster (RZV) dose today.');
+                nextdose.push('2nd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1.');
+              }
+              $('.rzv').append('<br>' + firstdose);
+              $('.rzvbutton').show();
+              for(i=0; i<nextdose.length; i++){
+                $('.rzv2').append('<br>' + nextdose[i] + '<br>');
+              }
+              break;
+            }
+            else if(rzvdates.length==1){
+              if(rzventry1<year50){
+                firstdose.push('<br> 1st Zoster (RZV) dose administered too early. Catch up schedule:');
+                if(today>year50){
+                  nextdose.push('1st Zoster (RZV) dose after 50 years old. (Today)');
+                  nextdose.push('2nd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1.');
+                }
+                else{
+                  nextdose.push('1st Zoster (RZV) dose after 50 years old. (After ' + year50.toLocaleDateString() + ').');
+                  nextdose.push('2nd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1.');
+                }
+                $('.rzv').append('<br>' + firstdose);
+                $('.rzvbutton').show();
+                for(i=0; i<nextdose.length; i++){
+                  $('.rzv2').append('<br>' + nextdose[i] + '<br>');
+                }
+                break;
+              }
+              else{
+                if(today>rzvdose2a){
+                  firstdose.push('<br> 2nd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1. (By ' + rzvdose2b.toLocaleDateString() + ').');
+                }
+                else{
+                  firstdose.push('<br> 2nd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1. (Between ' + rzvdose2a.toLocaleDateString() + ' and ' + rzvdose2b.toLocaleDateString() + ').');
+                }
+                $('.rzv').append('<br>' + firstdose);
+                break;
+              }
+            }
+            else{
+              if(rzventry1<year50){
+                firstdose.push('<br> 1st Zoster (RZV) dose administered too early. Catch up schedule:' + firstrzv50);
+                if(rzventry2>year50){
+                  if(today>rzvdose2a){
+                    nextdose.push('3rd Zoster (RZV) dose (final dose) 2 to 6 months after dose 2. (By ' + firstrzv50);
+                  }
+                  else{
+                    nextdose.push('3rd Zoster (RZV) dose (final dose) 2 to 6 months after dose 2. (Between ' + firstrzv50);
+                  }
+                }
+                $('.rzv').append('<br>' + firstdose);
+                $('.rzvbutton').show();
+                for(i=0; i<nextdose.length; i++){
+                  $('.rzv2').append('<br>' + nextdose[i] + '<br>');
+                }
+                break;
+              }
+              else if(rzventry2<rzvdose2a){
+                if(today>rzvdose2a){
+                  firstdose.push('<br> 2nd Zoster (RZV) dose administered too early. Catch up schedule:');
+                  nextdose.push('3rd Zoster (RZV) dose (final dose) today.');
+                }
+                else{
+                  firstdose.push('<br> 2nd Zoster (RZV) dose administered too early. Catch up schedule:');
+                  nextdose.push('3rd Zoster (RZV) dose (final dose) 2 to 6 months after dose 1. (Between ' + rzvdose2a.toLocaleDateString() + ' and ' + rzvdose2b.toLocaleDateString() + ').');
+                }
+                $('.rzv').append('<br>' + firstdose);
+                $('.rzvbutton').show();
+                for(i=0; i<nextdose.length; i++){
+                  $('.rzv2').append('<br>' + nextdose[i] + '<br>');
+                }
+                break;
+              }
+              else if(rzventry2>rzvdose2b){
+                firstdose.push('<br> 2nd Zoster (RZV) dose administered too late. See physician.');
+                $('.rzv').append('<br>' + firstdose);
+                break;
+              }
+            }                    
+          }
+          else{
+            if(zvlentry1<year60){
+              if(rzvdates.length==0){
+                if(today>rzvdose2aa){
+                  firstdose.push('<br> 1st RZV dose (final dose) 2 months after 1st ZVL dose. (Today).')
+                }
+                else{
+                  firstdose.push('<br> 1st RZV dose (final dose) 2 months after 1st ZVL dose. (After ' + rzvdose2aa.toLocaleDateString() + ').')
+                }
+                $('.rzv').append('<br>' + firstdose);
+                break;
+              }
+            }
+          }
+        }
+      }
+      loop=1;
+    }
+    while(loop=0);
+
+    $('.flu').append('<br> Flu vaccine annually. <br><br> Td booster every 10 years.');
+
 
   })
 
@@ -4255,6 +4614,60 @@ $(document).ready(function(){
       nugget=0;
     }
   });
+
+  $('#add').click(function(){
+    $('#add').hide();
+    $('#addName').hide();
+  });
+
+  var tuna=0;
+  $('.ppsvbutton').click(function(){
+    if(tuna==0){
+      $('.ppsv2').slideDown();
+      this.value='\u25B2';
+      tuna=1;
+    }
+    else{
+      $('.ppsv2').slideUp();
+      this.value='\u25BC';
+      tuna=0;
+    }
+  });
+
+  $('#add').click(function(){
+    $('#add').hide();
+    $('#addName').hide();
+  });
+
+  var lola=0;
+  $('.rzvbutton').click(function(){
+    if(lola==0){
+      $('.rzv2').slideDown();
+      this.value='\u25B2';
+      lola=1;
+    }
+    else{
+      $('.rzv2').slideUp();
+      this.value='\u25BC';
+      lola=0;
+    }
+  });
+
+
+  var chica=0;
+  $('.zvlbutton').click(function(){
+    if(chica==0){
+      $('.zvl2').slideDown();
+      this.value='\u25B2';
+      chica=1;
+    }
+    else{
+      $('.zvl2').slideUp();
+      this.value='\u25BC';
+      chica=0;
+    }
+  });
+
 
   $('#add').click(function(){
     $('#add').hide();
