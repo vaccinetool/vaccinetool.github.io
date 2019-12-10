@@ -1,13 +1,15 @@
 
-.entry1, .entry2, .entry3, .entry4, .entry5, .entry6, .entry7, .entry8 {
+.entry1, .entry2, .entry3, .entry4, .entry5, .entry6, .entry7, .entry8, .entry9, .entry10, .entry11, .entry12, .entry13, .entry14, .entry15, .entry16, .entry17 {
   	display: none;
+  	font-family:arial;
   }
 
-.dtap2, .hepb2, .hib2, .pedvax2, .pcv2, .rotarix2, .rotateq2, .polio2, .mmr2, .varicella2, .hepa2, .vaqta2, .men2, .tdap2, .hpv2 {
+.dtap2, .hepb2, .hib2, .pedvax2, .pcv2, .rotarix2, .rotateq2, .polio2, .mmr2, .varicella2, .hepa2, .vaqta2, .men2, .tdap2, .hpv2, .ppsv2, #flu, .rzv2, .zvl2 {
 	display: none;
 }
 
-.dosedates1, .dosedates2, .dosedates3, .dosedates4, .dosedates5, .dosedates6, .dosedates7, .dosedates8 {
+.dosedates1, .dosedates2, .dosedates3, .dosedates4, .dosedates5, .dosedates6, .dosedates7, .dosedates8, .dosedates9, .dosedates10, .dosedates11,
+.dosedates12, .dosedates13, .dosedates14, .dosedates15, .dosedates16, .dosedates17 {
 	display: none;
 }
 
@@ -75,7 +77,19 @@
 	display: inline;
 }
 
-.dtapbutton, .hibbutton, .varicellabutton, .mmrbutton, .poliobutton, .rotateqbutton, .rotarixbutton, .pcvbutton, .pedvaxbutton, .hepbbutton, .hepabutton, .vaqtabutton, .menbutton, .tdapbutton, .hpvbutton {
+.ppsv, .ppsvbutton {
+	display: inline;
+}
+
+.rzv, .rzvbutton {
+	display: inline;
+}
+
+.zvl, .zvlbutton {
+	display: inline;
+}
+
+.dtapbutton, .hibbutton, .varicellabutton, .mmrbutton, .poliobutton, .rotateqbutton, .rotarixbutton, .pcvbutton, .pedvaxbutton, .hepbbutton, .hepabutton, .vaqtabutton, .menbutton, .tdapbutton, .hpvbutton, .ppsvbutton, .rzvbutton, .zvlbutton {
 	display: none;
 }
 
@@ -95,4 +109,9 @@
 
 .birthday {
 	font-family: arial;
+}
+
+#choice1, #choice2, #choice3, #choice4, #choice5, #choice6, #choice7, #choice8, #choice9, #choice10, #choice11, #choice12, #choice13, #choice14,
+#choice15, #choice16, #choice17 {
+	font-family:arial;
 }
